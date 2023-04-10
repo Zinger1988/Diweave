@@ -199,7 +199,7 @@ const SiteJS = {
 
         if(mainSlider){
             const swiper = new Swiper('.main-slider__body', {
-                simulateTouch: true,
+                allowTouchMove: true,
                 preloadImages: false,
                 lazy: true,
                 navigation: {
@@ -216,7 +216,7 @@ const SiteJS = {
 
         if(newsSlider){
             const swiperNews = new Swiper('.news__carousel', {
-                simulateTouch: true,
+                allowTouchMove: true,
                 freeMode: true,
                 preloadImages: false,
                 lazy: true,
@@ -257,6 +257,7 @@ const SiteJS = {
 
         if(brandsSlider){
             const swiperBrands = new Swiper('.brands__carousel', {
+                allowTouchMove: true,
                 freeMode: true,
                 preloadImages: false,
                 lazy: true,
