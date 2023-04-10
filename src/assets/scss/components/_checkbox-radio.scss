@@ -1,0 +1,47 @@
+.checkbox-radio{
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+
+  $this: &;
+
+  &__toggler{
+    flex-shrink: 0;
+  }
+
+  &__input{
+    display: none;
+
+    &[type="checkbox"]{
+
+      ~ #{$this}__toggler{
+
+        &::before{
+        }
+      }
+
+      &:checked ~ #{$this}__toggler{
+      }
+    }
+
+    &[type="radio"]{
+
+      ~ #{$this}__toggler{
+      }
+
+      &:checked ~ #{$this}__toggler{
+      }
+    }
+  }
+
+  &:hover{
+    #{$this}__toggler{
+    }
+
+    #{$this}__input[type="radio"]:not(:checked) ~ #{$this}__toggler{
+    }
+  }
+
+  &__label{
+  }
+}

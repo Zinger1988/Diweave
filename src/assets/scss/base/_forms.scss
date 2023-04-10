@@ -1,0 +1,83 @@
+//// forms
+//form,
+//fieldset {
+//  margin: 0;
+//  padding: 0;
+//  border-style: none;
+//}
+//
+//input[type='text'],
+//input[type='password'],
+//input[type='date'],
+//input[type='datetime'],
+//input[type='email'],
+//input[type='number'],
+//input[type='search'],
+//input[type='tel'],
+//input[type='time'],
+//input[type='month'],
+//input[type='week']{
+//  @extend %nowrap;
+//}
+//
+//input[type='text'],
+//input[type='password'],
+//input[type='date'],
+//input[type='datetime'],
+//input[type='email'],
+//input[type='number'],
+//input[type='search'],
+//input[type='tel'],
+//input[type='time'],
+//input[type='month'],
+//input[type='week'],
+//select,
+//textarea {
+//  -moz-appearance: textfield;
+//  border: 1px solid $form-element-border-color;
+//  padding: $form-element-padding;
+//  font-family: inherit;
+//  font-size: 1.5rem;
+//  line-height: 1.4;
+//  border-radius: 3px;
+//  outline: none;
+//  @include animate(border);
+//
+//  &::-webkit-inner-spin-button,
+//  &::-webkit-outer-spin-button{
+//    -webkit-appearance: none;
+//    margin: 0;
+//  }
+//
+//  @include placeholder {
+//    color: $placeholder-color;
+//    opacity: 1;
+//    @include animate(opacity);
+//  }
+//
+//  &:focus {
+//    border-color: $form-element-focus-border-color;
+//    outline: none;
+//
+//    @include placeholder {
+//      opacity: 0;
+//    }
+//  }
+//}
+//
+//select {
+//  border-radius: 3px;
+//}
+//
+//textarea {
+//  resize: vertical;
+//}
+//
+//button,
+//input[type='button'],
+//input[type='reset'],
+//input[type='file'],
+//input[type='submit'] {
+//  -webkit-appearance: none;
+//  cursor: pointer;
+//}

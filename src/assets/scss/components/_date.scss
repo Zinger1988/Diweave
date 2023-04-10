@@ -1,0 +1,27 @@
+.date{
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: column;
+
+  &__inner{
+    font-size: $font-size-mobile-xs;
+    color: $dark200;
+    line-height: 1;
+    padding: .6rem 1rem 0;
+    background-color: rgba($dark200, .15);
+
+    @include media(">=xxl"){
+      padding: 1rem 1.6rem 0;
+      font-size: $font-size-desktop-xs;
+    }
+  }
+
+  &::after{
+    content: "";
+    width: 100%;
+    height: .6rem;
+    background-color: rgba($dark200, .15);
+    transform: skew(-45deg);
+    transform-origin: 0 0;
+  }
+}

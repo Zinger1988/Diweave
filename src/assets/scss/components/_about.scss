@@ -1,0 +1,180 @@
+.about{
+  background-color: $dark600;
+  background-image: url('../img/white-radial-gradient.svg'), url('../img/white-radial-gradient-2.svg');
+  background-position: 100% 0, 0 100%;
+  background-size: 24.3rem auto, 24.3rem auto;
+  background-repeat: no-repeat, no-repeat;
+  color: $white;
+  padding: 5.6rem 0;
+  position: relative;
+
+  @include media(">=md"){
+    padding: 10.8rem 0 9.4rem;
+  }
+
+  @include media(">=xxl"){
+    padding: 14.2rem 0 12.4rem;
+    background-size: 43.8rem auto, 43.8rem auto;
+  }
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    background-color: $white;
+  }
+
+  &::before{
+    top: 0;
+    left: calc(-100% + 18rem);
+    height: 1.6rem;
+    transform: skew(-45deg);
+    width: 100%;
+
+    @include media(">=md"){
+      left: calc(-100% + 50rem);
+      height: 2rem;
+    }
+
+    @include media(">=lg"){
+      left: calc(-100% + 67rem);
+      height: 2.8rem;
+    }
+  }
+
+  &::after{
+    bottom: 0;
+    right: calc(-100% + 18rem);
+    height: 1.6rem;
+    transform: skew(-45deg);
+    width: 100%;
+
+    @include media(">=md"){
+      right: calc(-100% + 45rem);
+      height: 1.3rem;
+    }
+
+    @include media(">=lg"){
+      right: calc(-100% + 67rem);
+      height: 1.9rem;
+    }
+  }
+
+  &__l{
+    margin: 0 0 4.8rem;
+    position: relative;
+
+    &::before{
+      display: none;
+      position: absolute;
+      content: "";
+      height: 4.3rem;
+      width: 100vw;
+      background: url(../img/decor-border-2.svg) no-repeat right top / auto 100%;
+      top: 1.2rem;
+      right: calc(100% + 3rem);
+
+      @include media(">=xl"){
+        display: block;
+      }
+
+      @include media(">=xxl"){
+        height: 7.7rem;
+        top: 1.8rem;
+        right: calc(100% + 6rem);
+      }
+    }
+
+    @include media(">=md"){
+      margin: 0;
+    }
+  }
+
+  &__title{
+    margin-top: 0;
+  }
+
+  &__text{
+    margin: 0 0 2.8rem;
+
+    @include media(">=xxl"){
+      margin: 0 0 4rem;
+    }
+  }
+
+  &__r{
+    position: relative;
+
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      width: 8rem;
+      height: 8rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include media(">=md"){
+        width: 12rem;
+        height: 12rem;
+      }
+
+      @include media(">=xl"){
+        width: 14rem;
+        height: 14rem;
+      }
+
+      @include media(">=xxl"){
+        width: 18rem;
+        height: 18rem;
+      }
+    }
+
+    &::before{
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+      background-image: url('../img/white-dots.svg');
+      opacity: .2;
+    }
+
+    &::after{
+      left: 0;
+      bottom: 0;
+      transform: translate(-50%, 50%) rotateY(180deg);
+      background-image: url('../img/white-dots.svg');
+      opacity: .1;
+    }
+  }
+
+  &__map-border{
+    display: none;
+    position: absolute;
+    left: 50%;
+    width: 100vh;
+    background: url(../img/decor-border-1.svg) no-repeat left top / auto 100%;
+
+    @include media(">=lg"){
+      display: block;
+      height: 4rem;
+      top: calc(100% - 1rem);
+    }
+
+    @include media(">=xl"){
+      height: 5rem;
+    }
+
+    @include media(">=xxl"){
+      display: block;
+      height: 7.7rem;
+      top: calc(100% - 2rem);
+    }
+  }
+
+  &__img{
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+  }
+}

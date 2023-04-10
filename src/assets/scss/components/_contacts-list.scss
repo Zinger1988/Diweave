@@ -1,0 +1,39 @@
+.contacts-list{
+  @extend %listreset;
+
+  .contacts-list__item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 1.2rem;
+    align-items: center;
+    font-size: $font-size-mobile-sm;
+
+    @include media(">=lg"){
+      margin: 0 0 1.6rem;
+    }
+
+    @include media(">=xxl"){
+      gap: 1.6rem;
+      font-size: $font-size-desktop-sm;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    a{
+      display: inline-block;
+    }
+  }
+
+  .contacts-list__item-icon{
+    font-size: 2rem;
+    color: $primary300;
+
+    @include media(">=xxl"){
+      font-size: 2.4rem;
+    }
+  }
+}

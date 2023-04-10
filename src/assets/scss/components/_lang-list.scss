@@ -1,0 +1,24 @@
+.lang-list{
+  @extend %listreset;
+  display: flex;
+  align-items: center;
+
+  .lang-list__item{
+    padding: .4rem 1.2rem;
+    border-right: 1px dotted rgba($light400, .3);
+    font-size: $font-size-desktop-xs;
+    text-transform: uppercase;
+
+    &:last-child{
+      border: none;
+    }
+  }
+
+  &__link{
+    font-weight: 600;
+
+    &--active{
+      color: $white;
+    }
+  }
+}

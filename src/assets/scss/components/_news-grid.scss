@@ -1,0 +1,15 @@
+.news-grid{
+
+  &__news-card{
+    margin: 0 0 3.2rem;
+
+    @include media(">=md"){
+      margin: 0 0 4rem;
+    }
+
+    @include media(">=xxl"){
+      margin: 0 0 5.6rem;
+    }
+  }
+
+}

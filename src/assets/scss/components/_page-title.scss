@@ -1,0 +1,197 @@
+.page-title{
+  background-color: $dark600;
+  color: $white;
+  padding: 2.8rem 0 3.6rem;
+  position: relative;
+  overflow: hidden;
+
+  $this: &;
+
+  @include media(">=md"){
+    padding: 2.8rem 0 5.2rem;
+  }
+
+  @include media(">=xxl"){
+    padding: 6rem 0 7.2rem;
+  }
+
+  &__date{
+    margin: 0 0 1.2rem;
+  }
+
+  &__title{
+    margin: 0 0 1.2rem;
+
+    @include media(">=xxl"){
+      margin: 0 0 1.6rem;
+    }
+  }
+
+  &__img{
+    display: block;
+    margin: 0 -1.5rem;
+
+    @include media(">=md"){
+      margin: 0;
+    }
+  }
+
+  &__img-item{
+    display: block;
+    width: 100%;
+    height: 55vw;
+    object-fit: cover;
+
+    @include media(">=sm"){
+      height: 55vw;
+    }
+
+    @include media(">=md"){
+      height: 33vw;
+    }
+
+    @include media(">=lg"){
+      height: 29vw;
+    }
+
+    @include media(">=xl"){
+      height: 23vw;
+    }
+
+    @include media(">=xl"){
+      height: 25vw;
+    }
+
+    @include media(">=1900px"){
+      height: 40rem;
+    }
+  }
+
+  &__bg{
+    display: none;
+
+    @include media(">=md"){
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: url("../img/gradient-dots.svg") repeat-y right top / 52rem auto;
+    }
+
+    @include media(">=xxl"){
+      background-size: 87rem auto;
+    }
+  }
+
+  &__bg-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .2;
+    filter: blur(1rem);
+    object-fit: cover;
+  }
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $white;
+    z-index: 10;
+  }
+
+  &::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: 1.6rem;
+    transform: skew(-45deg);
+
+    @include media(">=sm"){
+      left: calc(100% - 18rem)
+    }
+
+    @include media(">=md"){
+      height: 2.1rem;
+      left: calc(100% - 26rem)
+    }
+
+    @include media(">=lg"){
+      height: 2.8rem;
+      left: calc(100% - 34rem)
+    }
+
+    @include media(">=xl"){
+      height: 3.5rem;
+      left: calc(100% - 43rem)
+    }
+
+    @include media(">=xxl"){
+      height: 5rem;
+      left: calc(100% - 66rem)
+    }
+  }
+
+  &::before{
+    display: none;
+    height: 1rem;
+    transform: skew(45deg);
+
+    @include media(">=sm"){
+      display: block;
+      right: calc(100% - 5rem);
+    }
+
+    @include media(">=md"){
+      height: 1.3rem;
+      right: calc(100% - 7rem)
+    }
+
+    @include media(">=lg"){
+      height: 1.8rem;
+      right: calc(100% - 8rem)
+    }
+
+    @include media(">=xl"){
+      height: 2.2rem;
+      right: calc(100% - 10rem)
+    }
+
+    @include media(">=xxl"){
+      height: 3.5rem;
+      right: calc(100% - 16rem)
+    }
+  }
+
+  &--post{
+    padding: 2.8rem 0 0;
+
+    #{$this}__crumbs{
+      margin: 0 0 2.8rem;
+
+      @include media(">=xxl"){
+        margin: 0 0 4rem;
+      }
+    }
+
+    &::before,
+    &::after{
+      display: none;
+
+      @include media(">=sm"){
+        display: none;
+      }
+
+      @include media(">=md"){
+        display: block;
+      }
+    }
+  }
+}

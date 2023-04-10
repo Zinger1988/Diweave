@@ -1,0 +1,127 @@
+.category-grid{
+  @include media(">=xl"){
+    column-count: 2;
+    column-gap: 3rem;
+
+  }
+
+  &__category-tile{
+    margin: 0 0 2rem;
+    break-inside: avoid;
+
+    @include media(">=xl"){
+      margin: 0 0 2.8rem;
+    }
+  }
+}
+
+.category-tile{
+  display: flex;
+
+  &__img{
+    flex: 0 0 8rem;
+    padding: 1rem;
+    background-color: $dark200;
+    position: relative;
+
+    @include media(">=md"){
+      flex: 0 0 14rem;
+      padding: 2rem;
+    }
+
+    @include media(">=xxl"){
+      flex: 0 0 19.2rem;
+      padding: 2.4rem;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: .6rem solid transparent;
+      border-left-color: $white;
+      border-top-color: $white;
+      z-index: 1;
+    }
+  }
+
+  &__img-item{
+    display: block;
+    width: 100%;
+  }
+
+  &__title{
+    margin-top: 0;
+  }
+
+  &__body{
+    flex: 1 1 auto;
+    padding: 1.6rem 2rem 1.6rem 2.4rem;
+    border: 1px solid rgba($primary300,.2);
+    border-left: none;
+
+    @include media(">=md"){
+      padding: 2.4rem 2.8rem 2.4rem 3.2rem;
+    }
+  }
+
+  &__desc-item{
+    padding: .8rem 0;
+    border-bottom: .1rem dashed $light300;
+
+    @include media(">=md"){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &:first-child{
+      padding-top: 0;
+    }
+
+    &:last-child{
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__desc-subtitle{
+    font-size: $font-size-mobile-xs;
+    line-height: 1.6;
+    color: $dark300;
+    margin: 0;
+
+    @include media(">=md"){
+      font-size: $font-size-mobile-sm;
+    }
+  }
+
+  &__list{
+    @extend %listreset;
+  }
+
+  &__list-item{
+    display: inline;
+    font-size: $font-size-mobile-xs;
+    line-height: 1.6;
+    color: $primary300;
+    text-decoration: underline transparent;
+    @include animate("text-decoration");
+    cursor: pointer;
+
+    &:hover{
+      text-decoration-color: $primary300;
+    }
+
+    @include media(">=md"){
+      font-size: $font-size-mobile-sm;
+    }
+
+    &:not(:last-child)::after{
+      content: ",";
+      color: $primary300;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.tabs{
+  &__head{
+    display: flex;
+    box-shadow: inset 0 -.1rem 0 0 rgba($dark100,.3);
+    margin: 0 0 3.2rem;
+
+    @include media(">=xxl"){
+      margin: 0 0 6rem;
+    }
+  }
+
+  &__head-item{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $font-size-mobile-sm;
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    @include animate('box-shadow');
+
+    @include media(">=xxl"){
+      font-size: $font-size-desktop-sm;
+      padding: 1.6rem 2.4rem;
+    }
+
+    &--active{
+      box-shadow: inset 0 -.3rem 0 0 $primary300;
+    }
+
+    &:hover:not(&--active){
+      box-shadow: inset 0 -.3rem 0 0 $light300;
+    }
+  }
+
+  &__content-item{
+    display: none;
+
+    &--active{
+      display: block;
+    }
+  }
+}

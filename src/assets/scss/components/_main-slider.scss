@@ -1,0 +1,147 @@
+.main-slider{
+  position: relative;
+
+  .mainSlider__img-item{
+    display: block;
+    width: 100%;
+    min-width: 34rem;
+  }
+
+  &__nav-btn{
+    display: none;
+
+    @include media(">=lg"){
+      display: block;
+      position: absolute;
+      top: 50%;
+      z-index: 15;
+      transform: translateY(-50%);
+    }
+
+    &--next{
+      right: 2rem;
+    }
+
+    &--prev{
+      left: 2rem;
+    }
+
+    .btn__icon{
+      color: $white;
+    }
+  }
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $white;
+    z-index: 10;
+  }
+
+  &::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: 1.6rem;
+    transform: skew(-45deg);
+
+    @include media(">=sm"){
+      left: calc(100% - 18rem)
+    }
+
+    @include media(">=md"){
+      height: 2.1rem;
+      left: calc(100% - 26rem)
+    }
+
+    @include media(">=lg"){
+      height: 2.8rem;
+      left: calc(100% - 34rem)
+    }
+
+    @include media(">=xl"){
+      height: 3.5rem;
+      left: calc(100% - 43rem)
+    }
+
+    @include media(">=xxl"){
+      height: 5rem;
+      left: calc(100% - 66rem)
+    }
+  }
+
+  &::before{
+    display: none;
+    height: 1rem;
+    transform: skew(45deg);
+
+    @include media(">=sm"){
+      display: block;
+      right: calc(100% - 5rem);
+    }
+
+    @include media(">=md"){
+      height: 1.3rem;
+      right: calc(100% - 7rem)
+    }
+
+    @include media(">=lg"){
+      height: 1.8rem;
+      right: calc(100% - 8rem)
+    }
+
+    @include media(">=xl"){
+      height: 2.2rem;
+      right: calc(100% - 10rem)
+    }
+
+    @include media(">=xxl"){
+      height: 3.5rem;
+      right: calc(100% - 16rem)
+    }
+  }
+
+  .swiper-button-disabled{
+    display: none;
+  }
+
+  .swiper-pagination{
+    bottom: 3.6rem;
+    z-index: 15;
+
+    @include media(">=xl"){
+      bottom: 3.2rem;
+    }
+
+    @include media(">=xxl"){
+      bottom: 2.8rem;
+    }
+  }
+
+  .swiper-pagination-bullet{
+    height: .4rem;
+    width: 3.2rem;
+    border-radius: 0;
+    transform: skew(-45deg);
+    box-shadow: inset 0 0 0 .1rem $primary300;
+    opacity: .4;
+    @include animate('background-color, opacity');
+
+    @include media(">=xl"){
+      width: 4.4rem;
+    }
+
+    @include media(">=xxl"){
+      width: 8rem;
+      height: .6rem;
+    }
+  }
+
+  .swiper-pagination-bullet-active{
+    background-color: $primary300;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,42 @@
+.partnership-form{
+
+  &__input-row{
+    margin: 0 0 1.2rem;
+
+    @include media(">=xxl"){
+      margin: 0 0 1.6rem;
+    }
+  }
+
+  &__footer{
+    margin-top: 1rem;
+    padding: 2rem 0 0 0;
+    border-top: 1px dashed rgba($dark100, .5);
+
+    @include media(">=md"){
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    @include media(">=xxl"){
+      padding: 2.4rem 0 0 0;
+      gap: 1.6rem;
+    }
+  }
+
+  &__footer-btn{
+    display: block;
+    width: 100%;
+    margin: 0 0 1.2rem;
+
+    @include media(">=md"){
+      width: auto;
+      margin: 0;
+    }
+
+    &:last-child{
+      margin: 0;
+    }
+  }
+}

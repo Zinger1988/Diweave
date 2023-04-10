@@ -1,0 +1,181 @@
+.cooperation{
+  background-color: $dark600;
+  background-image: url(../img/white-radial-gradient-3.svg);
+  background-position: 0 0;
+  background-size: 24.3rem auto;
+  background-repeat: no-repeat;
+  color: $white;
+  padding: 5.6rem 0;
+  position: relative;
+
+  @include media(">=md"){
+    padding: 8.8rem 0;
+  }
+
+  @include media(">=lg"){
+    padding: 10rem 0;
+  }
+
+  @include media(">=xxl"){
+    padding: 13.6rem 0;
+    background-size: 43.8rem auto;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+  }
+
+  &::before {
+    top: 0;
+    left: calc(100% - 18rem);
+    height: 1.3rem;
+    transform: skew(45deg);
+    width: 100%;
+
+    @include media(">=sm"){
+      left: calc(100% - 26.8rem);
+    }
+
+    @include media(">=md"){
+      left: calc(100% - 38rem);
+    }
+
+    @include media(">=lg"){
+      left: calc(100% - 50rem);
+      height: 1.7rem;
+    }
+
+    @include media(">=xl"){
+      left: calc(100% - 63rem);
+      height: 2.1rem;
+    }
+
+    @include media(">=xxl"){
+      left: calc(100% - 96rem);
+      height: 3.3rem;
+    }
+  }
+
+  &::after {
+    bottom: 0;
+    right: calc(-100% + 18rem);
+    height: 1rem;
+    transform: skew(-45deg);
+    width: 100%;
+
+    @include media(">=sm"){
+      right: calc(-100% + 26.8rem);
+    }
+
+    @include media(">=md"){
+      right: 18rem;
+      width: 38rem;
+      transform: perspective(1rem) rotateX(3deg);
+    }
+
+    @include media(">=lg"){
+      right: 24rem;
+      width: 48rem;
+      height: 1.3rem;
+      transform: perspective(1.3rem) rotateX(3deg);
+    }
+
+    @include media(">=xl"){
+      right: 31rem;
+      width: 63rem;
+      height: 1.6rem;
+      transform: perspective(1.6rem) rotateX(3deg);
+    }
+
+    @include media(">=xxl"){
+      right: 48rem;
+      width: 97rem;
+      height: 2.5rem;
+      transform: perspective(2.5rem) rotateX(3deg);
+    }
+  }
+
+  &__l{
+    margin-bottom: 3.6rem;
+
+    @include media(">=md"){
+      margin-bottom: 0;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -20%);
+      width: 8.8rem;
+      height: 8.8rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../img/blue-dots.svg);
+      opacity: .3;
+
+      @include media(">=md"){
+        width: 14rem;
+        height: 14rem;
+      }
+
+      @include media(">=xxl"){
+        width: 18rem;
+        height: 18rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__title{
+    margin-top: 0;
+  }
+
+  &__r{
+    position: relative;
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 100%;
+      transform: translate(-90%, -40%);
+      width: 8.8rem;
+      height: 8.8rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../img/blue-dots.svg);
+      opacity: .3;
+
+      @include media(">=sm"){
+        transform: translate(-120%, -60%);
+      }
+
+      @include media(">=md"){
+        top: 0%;
+        width: 14rem;
+        height: 14rem;
+        transform: translate(-50%, -35%);
+      }
+
+      @include media(">=xxl"){
+        width: 18rem;
+        height: 18rem;
+      }
+    }
+  }
+
+  &__primary-text{
+    font-size: $font-size-mobile-lg;
+    font-weight: 500;
+
+    @include media(">=xxl"){
+      font-size: $font-size-desktop-lg;
+    }
+  }
+}

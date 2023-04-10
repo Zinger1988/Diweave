@@ -1,0 +1,30 @@
+@import "fonts";
+@import "typography";
+@import "forms";
+@import "helpers";
+
+html {
+  font-size: 62.5%;
+}
+
+html, body{
+  min-height: 100vh;
+}
+
+body {
+  font: 300 $font-size-mobile-md $font-family;
+  line-height: $line-height;
+  color: $dark600;
+  background-color: $white;
+  overflow-x: hidden;
+
+  @include media(">=xxl"){
+    font-size: $font-size-desktop-md;
+  }
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}

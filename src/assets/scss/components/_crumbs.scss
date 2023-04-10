@@ -1,0 +1,57 @@
+.crumbs{
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: .4rem 0;
+
+  &__item{
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    font-size: $font-size-mobile-xs;
+
+    @include media(">=xxl"){
+      font-size: $font-size-desktop-xs;
+    }
+
+    &:not(:last-child)::after{
+      content: "//";
+      font-weight: 600;
+      color: $primary300;
+      width: 1.2rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      text-align: center;
+      margin: 0 .8rem;
+
+      @include media(">=xxl"){
+        width: 1.6rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+      }
+    }
+  }
+
+  &__link,
+  &__current{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__link{
+    text-decoration: none;
+    color: $white;
+    @include animate('color');
+
+    &:hover{
+      color: $primary300;
+    }
+  }
+
+  &__current{
+    opacity: .4;
+  }
+}

@@ -1,0 +1,21 @@
+.input-row{
+  display: block;
+
+  &__title{
+    display: block;
+    text-transform: uppercase;
+    font-size: .9rem;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0 0 .4rem;
+
+    @include media(">=xxl"){
+      font-size: 1rem;
+      margin: 0 0 .8rem;
+    }
+  }
+
+  .error-message{
+    margin-top: .5rem;
+  }
+}

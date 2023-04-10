@@ -1,0 +1,76 @@
+.brands{
+
+  &__container{
+    position: relative;
+
+    @include media('>=md'){
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.6rem 0;
+    }
+
+    @include media('>=xxl'){
+      gap: 4rem 0;
+    }
+  }
+
+  &__title{
+    order: 0;
+
+    @include media('>=md'){
+      margin: 0;
+    }
+  }
+
+  &__carousel{
+    margin: 0 0 2.4rem;
+    overflow: visible;
+
+    @include media('>=md'){
+      width: 50rem;
+      flex: 0 0 50rem;
+      order: 2;
+    }
+
+    @include media('>=lg'){
+      width: 100%;
+      flex: 1 0 100%;
+    }
+  }
+
+  &__brand-hor{
+    margin: 0 0 1.6rem;
+
+    &:last-child{
+      margin: 0;
+    }
+  }
+
+  &__controls{
+    padding: 2.4rem 0 0;
+    border-top: 1px dashed $light300;
+    display: flex;
+    justify-content: space-between;
+
+    @include media('>=md'){
+      order: 1;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__nav{
+    display: flex;
+
+    @include media('>=md'){
+      margin: 0 1.6rem 0 0;
+    }
+
+    .btn:last-child{
+      margin: 0 0 0 -.1rem;
+    }
+  }
+}

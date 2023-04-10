@@ -1,0 +1,9 @@
+.error-message{
+  font-size: $font-size-mobile-xs;
+  line-height: 1.4;
+  color: #EA5858;
+
+  @include media(">=xxl"){
+    font-size: $font-size-desktop-xs;
+  }
+}

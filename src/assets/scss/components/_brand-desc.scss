@@ -1,0 +1,34 @@
+.brand-desc{
+
+  &__top{
+    text-align: center;
+    margin: 0 0 3rem;
+  }
+
+  &__logo{
+    display: block;
+    margin: 0 auto 1rem;
+    width: 15rem;
+
+    @include media(">=xxl"){
+      width: 20rem;
+    }
+  }
+
+  &__link{
+    font-weight: bold;
+    font-size: $font-size-mobile-lg;
+
+    @include media(">=xxl"){
+      font-size: $font-size-desktop-lg;
+    }
+  }
+
+  &__text{
+    font-size: $font-size-mobile-sm;
+
+    @include media(">=xxl"){
+      font-size: $font-size-desktop-sm;
+    }
+  }
+}

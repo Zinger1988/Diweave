@@ -1,0 +1,117 @@
+.news{
+
+  $this: &;
+
+  &__container{
+    position: relative;
+
+    @include media('>=md'){
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.6rem 0;
+    }
+
+    @include media('>=xxl'){
+      gap: 4rem 0;
+    }
+  }
+
+  &__title{
+    order: 0;
+
+    @include media('>=md'){
+      margin: 0;
+    }
+  }
+
+  &__carousel{
+    margin: 0 0 2.4rem;
+    width: 29rem;
+    overflow: visible;
+
+    @include media('>=sm'){
+      width: 32.8rem;
+    }
+
+    @include media('>=md'){
+      width: 100%;
+      flex: 1 0 100%;
+      order: 2;
+    }
+  }
+
+  &__controls{
+    padding: 2.4rem 0 0;
+    border-top: 1px dashed $light300;
+    display: flex;
+    justify-content: space-between;
+
+    @include media('>=md'){
+      order: 1;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__nav{
+    display: flex;
+
+    @include media('>=md'){
+      margin: 0 1.6rem 0 0;
+    }
+
+    .btn:last-child{
+      margin: 0 0 0 -.1rem;
+    }
+  }
+
+  &--dark{
+    background-color: $dark400;
+    color: $white;
+    padding: 6rem 0 9.6rem;
+    position: relative;
+
+    @include media(">=xxl"){
+      padding: 11.2rem 0 16.2rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #ffffff;
+    }
+
+    &::before {
+      top: 0;
+      left: calc(-100% + 18rem);
+      height: 1.8rem;
+      transform: skew(-45deg);
+      width: 100%;
+
+      @include media(">=sm"){
+        left: calc(-100% + 26.8rem);
+      }
+
+      @include media(">=md"){
+        left: calc(-100% + 50rem);
+      }
+
+      @include media(">=xl"){
+        left: calc(-100% + 63rem);
+        height: 2.3rem;
+      }
+
+      @include media(">=xxl"){
+        left: calc(-100% + 96rem);
+        height: 3.5rem;
+      }
+    }
+
+    #{$this}__controls{
+      border-top-color: $primary500;
+    }
+  }
+}

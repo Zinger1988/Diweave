@@ -1,0 +1,22 @@
+.container{
+  padding: 0 1.5rem;
+  max-width: 151rem;
+  margin: 0 auto;
+  min-width: 34rem;
+
+  @include media(">=md"){
+    padding: 0 2.7rem;
+  }
+
+  @include media(">=lg"){
+    padding: 0 3.5rem;
+  }
+
+  @include media(">=xl"){
+    padding: 0 4.5rem;
+  }
+
+  @include media(">=xxl"){
+    padding: 0 5rem;
+  }
+}

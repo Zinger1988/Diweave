@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/style.min.css">    <title>Diweave</title>
+</head>
+
+<body>
+
+<div class="page page--main">
+    <header class="page__header header">
+        <div class="container header__container">
+    
+            <a href="/" class="logo header__logo">
+                <img class="logo__img" src="assets/img/logo.svg" alt="Diweave">
+            </a>
+    
+            <button class="btn btn--outline header__menu-btn">
+                    <span class="btn__inner">
+                        <span class="btn__icon burger-icon">
+                            <span class="burger-icon__inner"></span>
+                        </span>
+                    </span>
+            </button>
+    
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-list-item">
+                        <a class="header__nav-list-link" href="/post.html">Про компанію</a>
+                    </li>
+                    <li class="header__nav-list-item">
+                        <a class="header__nav-list-link" href="/news.html">Новини</a>
+                    </li>
+                    <li class="header__nav-list-item">
+                        <a class="header__nav-list-link" href="/suppliers.html">Постачальники</a>
+                    </li>
+                    <li class="header__nav-list-item">
+                        <a class="header__nav-list-link" href="/contacts.html">Контакти</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <div class="header__search">
+                <div class="search">
+                    <input class="input-text search__control" type="text" name="search" placeholder="Пошук по статтям...">
+                    <button class="search__cancel btn header-search-close">
+                        <span class="btn__inner">
+                            <i class="btn__icon icon icon--close"></i>
+                        </span>
+                    </button>
+                    <button class="search__submit">
+                        <i class="icon icon--search"></i>
+                    </button>
+                </div>
+            </div><!-- search -->
+    
+            <div class="header__controls">
+                <button class="btn btn--outline btn--simple header-search-open">
+                    <span class="btn__inner">
+                        <i class="btn__icon icon icon--search"></i>
+                    </span>
+                </button>
+                <button class="btn" data-modal-id="modal-partnership">
+                    <span class="btn__inner">
+                        <span class="btn__text">Стати партнером</span>
+                    </span>
+                </button>
+            </div>
+    
+            <ul class="lang-list header__lang-list">
+                <li class="lang-list__item">
+                    <span class="lang-list__link lang-list__link--active">Ua</span>
+                </li>
+                <li class="lang-list__item">
+                    <a href="#" class="lang-list__link">En</a>
+                </li>
+            </ul><!-- lang -->
+    
+        </div>
+    </header>
+    <main class="page__content content">
+        
+        <div class="main-slider content__section">
+            <div class="main-slider__body swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <picture class="mainSlider__img-wrap">
+                            <source srcset="assets/img/slider/01/slide360.jpg , assets/img/slider/01/slide360@2x.jpg 2x" media="(max-width: 535px)">
+                            <source srcset="assets/img/slider/01/slide536.jpg , assets/img/slider/01/slide536@2x.jpg 2x" media="(max-width: 767px)">
+                            <source srcset="assets/img/slider/01/slide768.jpg , assets/img/slider/01/slide768@2x.jpg 2x" media="(max-width: 992px)">
+                            <source srcset="assets/img/slider/01/slide1000.jpg , assets/img/slider/01/slide1000@2x.jpg 2x" media="(max-width: 1199px)">
+                            <source srcset="assets/img/slider/01/slide1260.jpg , assets/img/slider/01/slide1260@2x.jpg 2x" media="(max-width: 1920px)">
+                            <img class="mainSlider__img-item" src="assets/img/slider/01/slide1920.jpg" srcset="assets/img/slider/01/slide1920@2x.jpg 2x" alt="img">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide">
+                        <picture class="mainSlider__img-wrap">
+                            <source srcset="assets/img/slider/01/slide360.jpg , assets/img/slider/01/slide360@2x.jpg 2x" media="(max-width: 535px)">
+                            <source srcset="assets/img/slider/01/slide536.jpg , assets/img/slider/01/slide536@2x.jpg 2x" media="(max-width: 767px)">
+                            <source srcset="assets/img/slider/01/slide768.jpg , assets/img/slider/01/slide768@2x.jpg 2x" media="(max-width: 992px)">
+                            <source srcset="assets/img/slider/01/slide1000.jpg , assets/img/slider/01/slide1000@2x.jpg 2x" media="(max-width: 1199px)">
+                            <source srcset="assets/img/slider/01/slide1260.jpg , assets/img/slider/01/slide1260@2x.jpg 2x" media="(max-width: 1920px)">
+                            <img class="mainSlider__img-item" src="assets/img/slider/01/slide1920.jpg" srcset="assets/img/slider/01/slide1920@2x.jpg 2x" alt="img">
+                        </picture>
+                    </div>
+                </div>
+        
+                <div class="swiper-pagination"></div>
+                <button class="btn btn--large btn--outline main-slider__nav-btn main-slider__nav-btn--prev">
+                    <span class="btn__inner">
+                        <i class="btn__icon icon icon--arrow-left"></i>
+                    </span>
+                </button>
+                <button class="btn btn--large btn--outline main-slider__nav-btn main-slider__nav-btn--next">
+                    <span class="btn__inner">
+                        <i class="btn__icon icon icon--arrow-right"></i>
+                    </span>
+                </button>
+            </div>
+        </div><!-- main slider -->
+        
+        <section class="advantages content__section">
+            <div class="container advantages__container">
+                <h2>Наші переваги</h2>
+                <ul class="advantages__list">
+        
+                    <li class="advantages__item">
+                        <img loading="lazy" class="advantages__item-img" src="assets/img/adv_01.svg" alt="advantage 1">
+                        <p class="advantages__item-desc">
+                            Широкий асортимент продуктів і рішень у різних цінових сегментах
+                        </p>
+                    </li><!-- advantages item -->
+        
+                    <li class="advantages__item">
+                        <img loading="lazy" class="advantages__item-img" src="assets/img/adv_01.svg" alt="advantage 1">
+                        <p class="advantages__item-desc">
+                            Індивідуальний підхід до партнерів і проектів у наданні фінансових умов
+                        </p>
+                    </li><!-- advantages item -->
+        
+                    <li class="advantages__item">
+                        <img loading="lazy" class="advantages__item-img" src="assets/img/adv_01.svg" alt="advantage 1">
+                        <p class="advantages__item-desc">
+                            Оперативна доставка в будь-який регіон України
+                        </p>
+                    </li><!-- advantages item -->
+        
+                    <li class="advantages__item">
+                        <img loading="lazy" class="advantages__item-img" src="assets/img/adv_01.svg" alt="advantage 1">
+                        <p class="advantages__item-desc">
+                            Сучасна система електронної комерції
+                        </p>
+                    </li><!-- advantages item -->
+        
+                </ul>
+            </div>
+        </section><!-- advantages -->
+        
+        <section class="about content__section">
+            <div class="container about__container">
+                <div class="row align-items-center">
+                    <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-0 col-lg-5 offset-lg-1 offset-xxl-0 col-xxl-5">
+                        <div class="about__l">
+                            <h2 class="about__title">Про компанію</h2>
+                            <div class="about__text">
+                                Компанія DIWEAVE була створена в 1997-му році, а в 2010-му, в результаті проведеного ребрендингу,
+                                отримала своє нинішнє ім'я. Основні напрямки діяльності компанії – дистрибуція IT продуктів, спортивного
+                                обладнання і товарів для дітей. Також компанія виступає оператором міжнародної мережі тренажернех залів
+                                NOLIMITS. Головной офіс компанії знаходиться в місті Прага ( Чехія).
+                            </div>
+                            <div class="about__footer">
+                                <button class="btn">
+                                    <span class="btn__inner">
+                                        <span class="btn__text">Дізнатися більше</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-0 col-lg-5 col-xxl-6 offset-xxl-1">
+                        <div class="about__r">
+                            <img loading="lazy" class="about__img" src="assets/img/about_01.png" alt="about">
+                            <span class="about__map-border"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- about -->
+        
+        <section class="news content__section">
+            <div class="container news__container">
+                <h2 class="news__title">Останні новини</h2>
+        
+                <div class="news__carousel swiper">
+                    <div class="swiper-wrapper">
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/01/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            ViewSonic TD1655 - портативний 16-дюймовий сенсорний монітор Full HD
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Незабаром на складі DIWEAVE - ViewSonic TD1655. Розширте екран з телефонів, планшетів
+                                        або ноутбуків для мобільної роботи, індивідуальних презентацій чи розваг...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/02/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            А4 Tech 2Drumtek дебютував на ринку України!
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Нова колекція бездротових навушників від A4Tech презентує професійний звук та новітні
+                                        технології. Місія 2Drumtek полягає в тому, щоб зробити революцію на ринку...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/03/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C с
+                                        частотой обновления 144 Гц, технологией AMD FreeSync и изгибом...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/04/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            ViewSonic TD1655 - портативний 16-дюймовий сенсорний монітор Full HD
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Незабаром на складі DIWEAVE - ViewSonic TD1655. Розширте екран з телефонів, планшетів
+                                        або ноутбуків для мобільної роботи, індивідуальних презентацій чи розваг...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/05/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            А4 Tech 2Drumtek дебютував на ринку України!
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Нова колекція бездротових навушників від A4Tech презентує професійний звук та новітні
+                                        технології. Місія 2Drumtek полягає в тому, щоб зробити революцію на ринку...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/06/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C с
+                                        частотой обновления 144 Гц, технологией AMD FreeSync и изгибом...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/07/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C с
+                                        частотой обновления 144 Гц, технологией AMD FreeSync и изгибом...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+                            <article class="news-card">
+                                <header class="news-card__header">
+                                    <a href="/post.html" class="news-card__link">
+                                        <div class="news-card__img">
+                                            <img loading="lazy" src="assets/img/posts/08/01.jpg" class="news-card__img-item" alt="ViewSonic TD1655">
+                                        </div>
+                                        <div class="news-card__title">
+                                            Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C
+                                        </div>
+                                    </a>
+                                </header>
+                                <div class="news-card__body">
+                                    <p>
+                                        Корпорация ViewSonic объявила о начале продаж 32-дюймового игрового монитора XG3202-C с
+                                        частотой обновления 144 Гц, технологией AMD FreeSync и изгибом...
+                                    </p>
+                                </div>
+                                <footer class="news-card__footer">
+                                    <div class="date">
+                                        <time class="date__inner" datetime="2023-03-15">15 березня 2023</time>
+                                    </div>
+                                </footer>
+                            </article><!-- News card -->
+                        </div><!-- slide -->
+        
+                    </div>
+                </div><!-- news carousel -->
+        
+                <div class="news__controls">
+                    <div class="news__nav">
+                        <button class="btn btn--outline btn--reversed news__nav-prev">
+                            <span class="btn__inner">
+                                <span class="btn__icon icon icon--arrow-angle-left"></span>
+                            </span>
+                        </button>
+                        <button class="btn btn--outline news__nav-next">
+                            <span class="btn__inner">
+                                <span class="btn__icon icon icon--arrow-angle-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                    <button class="btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Всі новини</span>
+                        </span>
+                    </button>
+                </div><!-- news controls -->
+        
+            </div>
+        </section><!-- news -->
+        
+        <section class="cooperation content__section">
+            <div class="container cooperation__container">
+                <div class="row align-items-md-center">
+                    <div class="col-md-6 col-lg-5 offset-lg-1 col-xl-4 offset-xxl-0 col-xxl-5">
+                        <div class="cooperation__l">
+                            <h2 class="cooperation__title">Ми відкриті до співпраці</h2>
+                            <button class="btn btn--outline btn--text-white cooperation__partnership" data-modal-id="modal-partnership">
+                                <span class="btn__inner">
+                                    <span class="btn__text">Стати партнером</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-xl-6">
+                        <div class="cooperation__r">
+                            <p class="cooperation__primary-text">
+                                Якщо ваша компанія зацікавлена у співпраці з нами,будь ласка, заповніть анкету, натиснувши кнопку
+                                «стати партнером».
+                            </p>
+                            <p class="cooperation__secondary-text">
+                                При виникненні будь-яких питань - звертайтесь!<br>
+                                Тел: <a href="tel:+380442002818">044 200 28 18</a><br>
+                                Email (підрозділ IT): <a href="mailto:info@diweave.com">info@diweave.com</a><br>
+                                Email (підрозділ дитячих товарів): <a href="info@dw-toys.com.ua">info@dw-toys.com.ua</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- cooperation -->
+        
+        <section class="brands content__section">
+            <div class="container brands__container">
+                <h2 class="brands__title">Наші постачальники</h2>
+        
+                <div class="brands__carousel swiper">
+                    <div class="swiper-wrapper">
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-acme">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Acme.svg" alt="Acme">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Acme.svg" alt="Acme">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Клавіатури, оптичні миші, гарнітури, наушніки та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-aula">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/aula.svg" alt="Aula">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/aula.svg" alt="Aula">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Клавіатури, оптичні миші, гарнітури, наушніки та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-nzxt">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/nzxt.svg" alt="NZXT">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/nzxt.svg" alt="NZXT">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Корпуси для ПК, материнськи плати,  блоки живлення, системи охолоджнення, клавіатури,
+                                    оптичні миші та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-viewsonic">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Viewsonic.svg" alt="ViewSonic">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Viewsonic.svg" alt="ViewSonic">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Монітори, проектори
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-speedlink">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/speedlink.svg" alt="SpeedLink">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/speedlink.svg" alt="SpeedLink">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Оптичні миші, гарнітури, наушніки та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-powerwalker">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Powerwalker.svg" alt="PowerWalker">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Powerwalker.svg" alt="PowerWalker">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Джерела бесперебійного живлення, стабілізатори, акамулятори
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-enermax">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Enermax.svg" alt="Enermax">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Enermax.svg" alt="Enermax">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Блоки живлення, системи охолодження, корпуси
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-gamidas">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Gamidas.svg" alt="Gamidas">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Gamidas.svg" alt="Gamidas">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Корпуси, системи охолодження, геймерські крісла та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-lianli">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Lianli.svg" alt="LianLi">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Lianli.svg" alt="LianLi">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Корпуси, системи охолодження та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-thronmax">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Thronmax.svg" alt="Thronmax">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Thronmax.svg" alt="Thronmax">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Мікрофони та  аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-mediarange">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Mediarange.svg" alt="Mediarange">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Mediarange.svg" alt="MediaRange">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Універсальні мобільні батареї, аксесуари, елементи живлення та флеш пам'ять
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-agfaphoto">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/agfaphoto.svg" alt="AgfaPhoto">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/agfaphoto.svg" alt="AgfaPhoto">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Поверстанції
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-noxo">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Noxo.svg" alt="Noxo">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Noxo.svg" alt="Noxo">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Клавіатури, оптичні миші, гарнітури, наушніки та аксесуари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-triathlon">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/it/colored/Triathlon.svg" alt="Triathlon">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/it/Triathlon.svg" alt="Triathlon">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Акумуляторні батареї
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-revell">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Revell.svg" alt="Revell">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Revell.svg" alt="Revell">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Моделі та модельна хімія
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-scootandride">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Scootandride.svg" alt="Scoot and ride">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Scootandride.svg" alt="Scootandride">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Cамокати та толокари
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-famemaster">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/4dMaster.svg" alt="4dMaster">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/4dMaster.svg" alt="4dMaster">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Об'ємні пазли
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-piatnik">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Piatnik.svg" alt="Piatnik">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Piatnik.svg" alt="Piatnik">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Настільні ігри, паперові пазли,  гральні карти та карти ТАРО
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-eurographics">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Eurographics.svg" alt="Eurographics">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Eurographics.svg" alt="Eurographics">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Паперові пазли
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-globber">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Globber.svg" alt="Globber">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Globber.svg" alt="Globber">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Самокати, біговели, додаткове обладнання та запчастини
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-larsen">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Larsen.svg" alt="Larsen">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Larsen.svg" alt="Larsen">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Пазли-вкладиші
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                        <div class="swiper-slide">
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-hama">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Hama.svg" alt="Hama">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Hama.svg" alt="Hama">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Термомозаїки
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                            <div class="brand-hor brands__brand-hor" data-modal-id="modal-cobi">
+                                <div class="brand-hor__img">
+                                    <div class="brand-hor__img-inner">
+                                        <img loading="lazy" class="brand-hor__img-item--hover" src="assets/img/vendors/toys/colored/Cobi.svg" alt="Cobi">
+                                        <img loading="lazy" class="brand-hor__img-item" src="assets/img/vendors/toys/Cobi.svg" alt="Cobi">
+                                    </div>
+                                </div>
+                                <div class="brand-hor__text">
+                                    Конструктори
+                                </div>
+                            </div><!-- brand-hor -->
+        
+                        </div><!-- slide -->
+        
+                    </div>
+                </div><!-- news carousel -->
+        
+                <div class="brands__controls">
+                    <div class="news__nav">
+                        <button class="btn btn--outline btn--reversed brands__nav-prev">
+                            <span class="btn__inner">
+                                <span class="btn__icon icon icon--arrow-angle-left"></span>
+                            </span>
+                        </button>
+                        <button class="btn btn--outline brands__nav-next">
+                            <span class="btn__inner">
+                                <span class="btn__icon icon icon--arrow-angle-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                    <button class="btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Всі постачальники</span>
+                        </span>
+                    </button>
+                </div><!-- news controls -->
+        
+            </div>
+        </section><!-- news -->
+        
+        <div style="display: none" class="container">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+        
+            <button class="btn">
+                <span class="btn__inner">
+                    <span class="btn__text">Button</span>
+                </span>
+            </button>
+        
+            <button class="btn btn--large">
+                <span class="btn__inner">
+                    <span class="btn__text">Button</span>
+                </span>
+            </button>
+        
+            <button class="btn">
+                <span class="btn__inner">
+                    <i class="btn__icon icon icon--search"></i>
+                    <span class="btn__text">Button</span>
+                </span>
+            </button>
+        
+            <button class="btn btn--large">
+                <span class="btn__inner">
+                    <i class="btn__icon icon icon--search"></i>
+                    <span class="btn__text">Button</span>
+                </span>
+            </button>
+        
+            <button class="btn btn--outline">
+                <span class="btn__inner">
+                    <i class="btn__icon icon icon--search"></i>
+                    <span class="btn__text">Button</span>
+                </span>
+            </button>
+        
+            <button class="btn btn--large btn--outline">
+                <span class="btn__inner">
+                    <i class="btn__icon icon icon--search"></i>
+                    <span class="btn__text">Button</span>
+                </span>
+            </button>
+        
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aperiam architecto blanditiis
+                cumque deleniti doloribus error, explicabo in inventore, magnam optio perferendis quia, sequi vel veniam veritatis
+                voluptatem voluptates!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aperiam architecto blanditiis
+                cumque deleniti doloribus error, explicabo in inventore, magnam optio perferendis quia, sequi vel veniam veritatis
+                voluptatem voluptates!
+            </p>
+        
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                    </ul>
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            </ul>
+        
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <ol>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                    </ol>
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            </ol>
+        
+            <i class="icon icon--arrow-right"></i>
+        </div>
+        
+        
+        
+        
+    </main>
+
+    <footer class="page__footer footer">
+        <div class="footer__content">
+            <div class="footer__content-inner">
+    
+                <a class="logo footer__logo" href="/">
+                    <img class="logo__img" src="assets/img/logo-white.svg" alt="Diweave">
+                </a>
+    
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-list-item">
+                            <a class="footer__nav-list-link" href="/post.html">
+                                Про компанію
+                            </a>
+                        </li>
+                        <li class="footer__nav-list-item">
+                            <a class="footer__nav-list-link" href="/news.html">
+                                Новини
+                            </a>
+                        </li>
+                        <li class="footer__nav-list-item">
+                            <a class="footer__nav-list-link" href="/suppliers.html">
+                                Постачальники
+                            </a>
+                        </li>
+                        <li class="footer__nav-list-item">
+                            <a class="footer__nav-list-link" href="/contacts.html">
+                                Контакти
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <a href="https://www.facebook.com/Diweave" target="_blank" class="btn footer__fb-btn">
+                    <span class="btn__inner">
+                        <i class="btn__icon icon icon--facebook"></i>
+                        <span class="btn__text">Ми на Facebook</span>
+                    </span>
+                </a>
+    
+                <ul class="contacts-list footer__contacts-list">
+                    <li class="contacts-list__item">
+                        <i class="icon icon--phone contacts-list__item-icon"></i>
+                        <span class="contacts-list__item-text">
+                            <a href="tel:+380442002818">044 200 28 18</a>
+                            <span class="text--300 text--extrasmall">(багатоканальний)</span>
+                        </span>
+                    </li>
+                    <li class="contacts-list__item">
+                        <i class="icon icon--mail contacts-list__item-icon"></i>
+                        <span class="contacts-list__item-text">
+                            <a href="mailto:info@diweave.com">info@diweave.com</a>
+                            <span class="text--300 text--extrasmall">- підрозділ IT</span>
+                            <br>
+                            <a href="mailto:info@dw-toys.com.ua">info@dw-toys.com.ua</a>
+                            <span class="text--300 text--extrasmall">- підрозділ дитячих товарів</span>
+                        </span>
+                    </li>
+                    <li class="contacts-list__item">
+                        <i class="icon icon--pointer contacts-list__item-icon"></i>
+                        <span class="contacts-list__item-text">
+                            Україна, 03170, Київ, б-р Жуля Верна<br>
+                            (Ромен Ролана), 13-в
+                        </span>
+                    </li>
+                </ul>
+    
+                <div class="footer__copyrights">© 2023 | Diweave.com</div>
+    
+            </div>
+        </div>
+        <div class="footer__map">
+            <div class="footer__map-inner">
+                <img class="footer__map-img" loading="lazy" src="assets/img/map.svg" alt="Map image">
+            </div>
+        </div>
+    </footer><!-- page footer --></div>
+
+<div class="modal modal-close" id="modal-partnership">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+            <div class="modal__heading h4">
+                Заявка на партнерство
+            </div>
+
+            <div class="modal__body">
+
+                <form novalidate class="partnership-form" id="partnership-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">ПІБ</span>
+                                <input class="input-text input-text--required input-row__input-text" type="text" name="fullname" data-validation>
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Електронна пошта</span>
+                                <input class="input-text input-text--required input-row__input-text" type="email" name="email" data-validation="email">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Телефон</span>
+                                <input class="input-text input-text--required input-row__input-text" type="tel" name="phone" data-validation="tel">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Посада</span>
+                                <input class="input-text input-row__input-text" type="text" name="position">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Назва компанії</span>
+                                <input class="input-text input-row__input-text" type="text" name="company name">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Веб-сайт</span>
+                                <input class="input-text input-row__input-text" type="text" name="website">
+                            </div><!-- input row -->
+                        </div>
+                    </div>
+                    <div class="partnership-form__footer">
+                        <button class="btn partnership-form__footer-btn" data-validation-btn>
+                            <span class="btn__inner">
+                                <span class="btn__text">Залишити заявку</span>
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn--outline modal-close partnership-form__footer-btn">
+                            <span class="btn__inner">
+                                <span class="btn__text">Закрити</span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+            </div><!-- body -->
+
+<!--            <div class="modal__footer">-->
+<!--                <div class="modal__controls">-->
+<!--                    <button class="btn modal__controls-btn" data-validation-btn>-->
+<!--                        <span class="btn__inner">-->
+<!--                            <span class="btn__text">Залишити заявку</span>-->
+<!--                        </span>-->
+<!--                    </button>-->
+<!--                    <button type="button" class="btn btn&#45;&#45;outline modal-close modal__controls-btn">-->
+<!--                        <span class="btn__inner">-->
+<!--                            <span class="btn__text">Скасувати</span>-->
+<!--                        </span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- partnership modal --><div class="modal modal-close" id="modal-acme">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Acme
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/acme.svg" alt="acme">
+                        <a class="brand-desc__link" href="https://www.acme.eu/" target="_blank">www.acme.eu</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            ACME Grupė – холдингова компанія, що управляє підприємствами, що входять до групи ACME. Група
+                            підприємств ACME є одним із провідних оптовиків у сфері обладнання для інформаційних та
+                            телекомунікаційних технологій та розповсюджувачів прав на кінофільми в країнах Балтії. Сьогодні до
+                            складу групи ACME входить 29 підприємств у Литві, Латвії, Естонії, Грузії, Вірменії, Польщі, Білорусі.
+                            Консолідований оборот ACME Grupė у 2014 р. перевищив 254 мільйони євро. У групі підприємств працює понад
+                            470 працівників.
+                        </p>
+                        <p>
+                            ACC Distribution– одне із підприємств групи ACME Grupė. Компанія заснована у 1998 р. За 17 років
+                            діяльності ми стали одним із найбільших виробників комп'ютерних аксесуарів та товарів для освітлення у
+                            регіонах Східної та Центральної Європи.
+                        </p>
+                        <p>
+                            ACC Distribution э постачальником в Україну всіх товарів бренду ACME: навушників, звукових систем,
+                            комп'ютерних мишей та клавіатур, килимків, геймпадів, УМБ, окулярів віртуальної реальності тощо.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-aula">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Aula
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/aula.svg" alt="Aula">
+                        <a class="brand-desc__link" href="https://aulagaming.eu" target="_blank">www.aulagaming.eu</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Бренд AULA - це торгова марка периферійних пристроїв для професіоналів комп'ютерних ігор
+                            DONGGUAN SUOAI ELECTRONICS CO., LTD., орієнтована на забезпечення максимальної
+                            продуктивності, найкращих вражень від гри та найкращої якості персональних ігрових
+                            периферійних пристроїв.
+                        </p>
+                        <p>
+                            Компанія DONGGUAN SUOAI ELECTRONICS CO., LTD. заснована в 2002 році і розташована в районі
+                            місті Дунгуань, Китай.
+                        </p>
+                        <p>
+                            Враховано все - голоси користувачів та потреби гравців, приділяється велика увага відгукам
+                            гравців, гравцям пропонується найкраще співвідношення ціна/якість!
+                        </p>
+                        <p>
+                            Компанія також має філії у Китаї, Гонконгу, Китаї, США, де працюють понад 1000
+                            співробітників. Всі заводи DONGGUAN SUOAI ELECTRONICS пройшли міжнародну сертифікацію якості
+                            системи менеджменту ISO9001 та сертифікацію системи довкілля ISO14001, а також внутрішню
+                            китайську сертифікацію автоматизованих та роботизованих виробничих ліній. Це єдиний виробник
+                            периферійних пристроїв, який самостійно розробив та виготовляє свитчі механічних клавіатур у
+                            Китаї. Продукти DONGGUAN SUOAI ELECTRONICS відповідають REACH, RoHS, UL, FCC та іншим
+                            стандартам сертифікації, зареєстровано понад 100 технічних патентів.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-avtek">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Avtek
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/avtek.svg" alt="nzxt">
+                        <a class="brand-desc__link" href="https://avtek.eu/" target="_blank">www.avtek.eu</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Торгова марка Avtek належить польській компанії VIDIS S.A. – великому дистриб'ютору
+                            проекційного та периферійного IT обладнання.
+                        </p>
+                        <p>
+                            Перші продукти Avtek з'явилися на європейському ринку у 2006 році в Польщі.З раннього
+                            початку бренд фокусувався на ринку обладнання для конференцій та сфери освіти, а також для
+                            професійних провідних та презентацій: інтерактивні екрани та дошки, професійні екрани,
+                            кріплення та аксесуари.
+                        </p>
+                        <p>
+                            Ця стратегія забезпечила успіх бренду на ринку, і здобула довіру у   більш ніж 30 000
+                            клієнтів протягом перших 4 років його присутності на ринку.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-enermax">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Enermax
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/enermax.svg" alt="enermax">
+                        <a class="brand-desc__link" href="https://www.enermaxeu.com/" target="_blank">www.enermaxeu.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Компанія Enermax Technology була заснована в 1990 році в Тайвані і стала всесвітньо
+                            провідним виробником комп'ютерних блоків живлення, корпусів, вентиляторів, клавіатур та
+                            іншої периферії.Enermax пропонує завжди нові технології.Власні дизайн-інженери працюють
+                            безперервно, щоб знайти найкращі продукти та рішення.
+                        </p>
+                        <p>
+                            Coolergiant Computers Handels GmbH або Enermax Німеччина, заснована у березні 2003 року, є
+                            німецьким дочірнім представництвом Enermax Technology Corporation і здійснює
+                            логістику/маркетинг у Європі та країнах СНД.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-gamidas">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Gamidas
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/gamidas.svg" alt="gamidas">
+                        <a class="brand-desc__link" href="https://www.gamdias.com/" target="_blank">www.gamdias.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            GAMDIAS Technology була заснована у 2012 р. Компанія у своїх розробках прагне встановити
+                            високу планку якості та практичності. Перші три літери назви бренду GAM - це абревіатура
+                            девізу "Gaming art   in motion" ("Ігрове мистецтво в русі").
+                        </p>
+                        <p>
+                            GAMDIAS - цей ігровий бренд і, як особливо наголошується, команда дизайнерів компанії
+                            складається із захоплених геймерів, завдання яких створювати продукти, які здатні
+                            "зруйнувати обмеження традиційного мислення та революціонізувати індустрію кіберспорту".
+                        </p>
+                        <p>
+                            Як повідомляє виробник, відмінною рисою бренду в дизайні продукції є використання
+                            підсвічування RGB практично в кожній продуктовій лінійці.
+                        </p>
+                        <p>
+                            Продукти GAMDIAS позиціонуються як високорівневі рішення з оптимальним співвідношенням
+                            ціна/якість. Компанія пропонує геймерам практично все необхідне: компоненти для ігрових
+                            ПК – комп'ютерні корпуси, блоки живлення, системи охолодження, аксесуари – навушники,
+                            клавіатури та миші, спеціальні геймерські меблі – крісла тощо. GAMDIAS Technology входить
+                            до групи компаній KWorld, продукція якої вже давно відома і на українському ринку. Рішення
+                            GAMDIAS сьогодні представлені в різних країнах по всьому світу — від Північної Америки та
+                            Європи до Південно-Східної Азії.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-lianli">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Lian Li
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/lianli.svg" alt="lianli">
+                        <a class="brand-desc__link" href="https://lian-li.com/" target="_blank">www.lian-li.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lian Li Industrial Co., LTD, заснована в 1983 році, входить до числа найбільших та
+                            шанованих сімейних бізнесів у сфері розробки дизайну та виробництва високоякісних
+                            корпусів та аксесуарів для ПК.
+                        </p>
+                        <p>
+                            Як виробник, що перебуває більше 30 років в індустрії ПК, Lian Li могли спостерігати, як
+                            приходять і йдуть різні тенденції, але залишаються вірними своїй філософії - що їх
+                            продукція повинна виділятися з інших товарів, і щоб вибираючи продукцію Lian Li, ви б
+                            відчували її винятковість. Навіть у часи, коли нормою в галузі було скорочення витрат,
+                            Lian Li залишалася найкращим вибором для всіх, хто створює систему для ПК.
+                        </p>
+                        <p>
+                            Lian Li - не тільки відомий виробник корпусів для ПК та супутніх товарів, таких як
+                            кронштейни, інтерфейси та монтажні комплекти, вони також виступають як постачальник послуг
+                            OEM і ODM, який допомагає розробляти продукти для невеликих стартапів або забезпечує
+                            великомасштабне високоякісне виробництво промислових та/ чи серверних корпусів. Постійні
+                            клієнти Lian Li цінують майстерність у галузі розробки корпусів та електротехніки, показану
+                            в численних проектах, тому що незалежно від того, чи Ліан Лі створює проект для своєї
+                            лінійки товарів або для клієнтів - мета одна - щоб кожен відчув різницю.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-mediarange">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Mediarange
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/mediarange.svg" alt="mediarange">
+                        <a class="brand-desc__link" href="https://www.media-range.com/en/index.pmode" target="_blank">www.media-range.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            MediaRange GmbH є постачальником інноваційних, відзначених   нагородами продуктів на ринках
+                            цифрових технологій зберігання даних і   канцелярських товарів з більш ніж десятирічним
+                            досвідом.
+                        </p>
+                        <p>
+                            Продукти отримали різні нагороди від відомих комп’ютерних журналів, таких як c’t або
+                            ComputerBILD. Філософія компанії включає як високоякісне портфоліо, так і комплексне
+                            обслуговування клієнтів. Ця стратегія принесла MediaRange, компанії, яка отримала нагороду
+                            за інновації споживчої електроніки на CeBIT, стабільне зростання з моменту її заснування в
+                            2002 році. MediaRange продає свою продукцію через відомих дистриб’юторів по всій Європі.
+                            Ключові клієнти постачаються напряму. Кінцеві клієнти можуть знайти продукти MediaRange у
+                            магазинах своїх місцевих роздрібних продавців, а також у великих відомих онлайн-магазинах
+                            і спеціалізованих інтернет-магазинах.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-nzxt">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                NZXT
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/nzxt.svg" alt="nzxt">
+                        <a class="brand-desc__link" href="https://nzxt.com/" target="_blank">www.nzxt.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            NZXT Inc. є провідним виробником комп'ютерних корпусів, систем охолодження для них та
+                            управління вентиляцією, блоків живлення, що оснащує ПК-ігрову спільноту рафінованими
+                            продуктовими рішеннями з 2004 року.
+                        </p>
+                        <p>
+                            Комп'ютерне обладнання NZXT включає різноманітний портфель продуктів, які однаково поєднують
+                            дизайн і функціональність, і були відзначені різними нагородами. Вони покликані розширити
+                            можливості ентузіастів комп'ютеробудування і створити деякі з найкрасивіших і най творчіших
+                            комп'ютерних систем у світі. Компанія також пишається тим, що поставляє PC-DoItYourself
+                            співтовариство компонентами, які підвищують рівень систем, що збираються, і надихають
+                            збирачів своїм високим потенціалом.
+                        </p>
+                        <p>
+                            Головний офіс компанії R&D знаходиться в США, Каліфорнія.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-partnership">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+            <div class="modal__heading h4">
+                Заявка на партнерство
+            </div>
+
+            <div class="modal__body">
+
+                <form novalidate class="partnership-form" id="partnership-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">ПІБ</span>
+                                <input class="input-text input-text--required input-row__input-text" type="text" name="fullname" data-validation>
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Електронна пошта</span>
+                                <input class="input-text input-text--required input-row__input-text" type="email" name="email" data-validation="email">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Телефон</span>
+                                <input class="input-text input-text--required input-row__input-text" type="tel" name="phone" data-validation="tel">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Посада</span>
+                                <input class="input-text input-row__input-text" type="text" name="position">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Назва компанії</span>
+                                <input class="input-text input-row__input-text" type="text" name="company name">
+                            </div><!-- input row -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-row partnership-form__input-row">
+                                <span class="input-row__title">Веб-сайт</span>
+                                <input class="input-text input-row__input-text" type="text" name="website">
+                            </div><!-- input row -->
+                        </div>
+                    </div>
+                    <div class="partnership-form__footer">
+                        <button class="btn partnership-form__footer-btn" data-validation-btn>
+                            <span class="btn__inner">
+                                <span class="btn__text">Залишити заявку</span>
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn--outline modal-close partnership-form__footer-btn">
+                            <span class="btn__inner">
+                                <span class="btn__text">Закрити</span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+            </div><!-- body -->
+
+<!--            <div class="modal__footer">-->
+<!--                <div class="modal__controls">-->
+<!--                    <button class="btn modal__controls-btn" data-validation-btn>-->
+<!--                        <span class="btn__inner">-->
+<!--                            <span class="btn__text">Залишити заявку</span>-->
+<!--                        </span>-->
+<!--                    </button>-->
+<!--                    <button type="button" class="btn btn&#45;&#45;outline modal-close modal__controls-btn">-->
+<!--                        <span class="btn__inner">-->
+<!--                            <span class="btn__text">Скасувати</span>-->
+<!--                        </span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- partnership modal --><div class="modal modal-close" id="modal-powerwalker">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                PowerWalker
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/powerwalker.svg" alt="powerwalker">
+                        <a class="brand-desc__link" href="https://powerwalker.com/" target="_blank">www.powerwalker.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Торгова марка PowerWalker належить німецькій компанії BlueWalker, заснованій у 2004 р.
+                            Компанія є відомим виробником ДБЖ на ринку Німеччини і виробляє продукцію як для домашніх
+                            користувачів, так і для сегменту SMB і для великих корпорацій.Використання тільки
+                            високорівневих компонентів ( зокрема акумуляторів японської копорацції YUASA) дозволяє
+                            використовувати ДБЖ у критичних задачах та середовищах.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-speedlink">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Speedlink
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/speedlink.svg" alt="speedlink">
+                        <a class="brand-desc__link" href="https://www.speedlink.com/" target="_blank">www.speedlink.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            SPEEDLINK є одним з провідних брендів у галузі аксесуарів для комп'ютерів та відеоігор у
+                            Європі. Продукти є комбінацією нових технологій, відмінного дизайну та чудової
+                            функціональності.
+                        </p>
+                        <p>
+                            З моменту заснування у 1998 році SPEEDLINK постійно зростає. В даний час ці продукти можна
+                            знайти у більш ніж 30 країнах Європи. Більше 10 мільйонів проданих саунд-систем та понад 15
+                            мільйонів проданих ігрових контролерів є вражаючою демонстрацією нашої присутності на ринку.
+                        </p>
+                        <p>
+                            Розробка продуктів SPEEDLINK ґрунтується на відкритості для інновацій та обліку тенденцій
+                            майбутнього дня. Швидкоплинність ринку потребує максимальної уважності та великої міри
+                            гнучкості. Постійний контроль – від початку розробки до вистави на ринку – є гарантією
+                            відмінної якості продуктів та основою постійного успіху.
+                        </p>
+                        <p>
+                            Виробником продуктів SPEEDLINK є діюча у міжнародному масштабі Speedlink GmbH.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-thronmax">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Thronmax
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/thronmax.svg" alt="thronmax">
+                        <a class="brand-desc__link" href="https://www.thronmax.com/" target="_blank">www.thronmax.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Thronmax - провідний виробник професійних аудіопродуктів для ринків запису музики,
+                            радіомовлення, постпродакшену та ринків стрімінгу.
+                        </p>
+                        <p>
+                            Мікрофони Thronmax пропонують найкращий вибір конденсаторних мікрофонів   для студії, USB,
+                            подкастів, відеоконференцій та запису на відкритому просторі та   в «польових умовах».
+                            Мікрофони Thronmax забезпечують високу якість звуку, яку можна порівнювати  з якістю від
+                            набагато дорожчих мікрофонів. Мікрофони Thronmax ідеально підходять для ігор, стримінгу,
+                            віддаленого та/або домашнього навчання, дзвінків по Скайпу, подкастингу, інструментальної
+                            музики, будь-якого використання у бізнесі.
+                        </p>
+                        <p>
+                            Мікрофони Thronmax продаються у більш ніж 45 країнах, це робиться силами 10 000 реселерів та
+                            500 он-лайн магазинів. Топ-5 країн із продажу – США, Скандинавська група, Німеччина, Корея,
+                            тощо.
+                        </p>
+                        <p>
+                            "Наші дистриб'ютори і широка партнерська мережа магазинів гарантують, що мікрофони
+                            продаються в багатьох країнах і це число продовжує зростати, що робить Thronmax справді
+                            глобальною компанією ...", - сказав Хасан Тургут, Генеральний менеджер Thronmax.
+                        </p>
+                        <p>
+                            Ряд моделей мікрофонів Thronmax мають такі нагороди: Red Dot Award: Product Design 2021 і
+                            2021 IF Design Award.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-viewsonic">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Viewsonic
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/viewsonic.svg" alt="viewsonic">
+                        <a class="brand-desc__link" href="https://www.viewsonic.com/eu/" target="_blank">www.viewsonic.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            ViewSonic - всесвітньо визнаний лідер у галузі візуальних технологій.
+                        </p>
+                        <p>
+                            Це інноваційною компанією, що насамперед націлена на задоволення потреб клієнтів, створення
+                            цінностей для клієнтів та партнерів, постійне впровадження інноваційних технологій,
+                            продуктів та рішень, турботу про довкілля та використання екологічно чистих матеріалів.
+                            ViewSonic – лідер інновацій.
+                        </p>
+                        <p>
+                            При розробці логотипу компанії, засновник, голова правління та виконавчий директор ViewSonic
+                            Джеймс Чу, прагнув створити образ бренду, який відображав би високу якість та такі атрибути
+                            продукції ViewSonic як яскраві кольори та високу роздільну здатність. Джеймс Чу шукав
+                            емблему, яка стала б добре впізнаваним символом досконалості, зручності та комфорту.
+                        </p>
+                        <p>
+                            Сьогодні три пташки з сімейства Амадіна Гульда, які стали логотипом ViewSonic, споживачі
+                            всього світу пов'язують із такими атрибутами як: унікальність, висока якість, яскравість,
+                            теплота та дружелюбність. Компанія ViewSonic не лише вибрала цих рідкісних птахів для свого
+                            логотипу, але й є спонсором програми «Прийняти птаха» на LadyGouldianFinch.com.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-agfaphoto">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Agfaphoto
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/agfaphoto.svg" alt="agfaphoto">
+                        <a class="brand-desc__link" href="https://www.agfaphoto-gtc.com/en/" target="_blank">www.agfaphoto-gtc.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-famemaster">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Famemaster
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/4dmaster.svg" alt="4dmaster">
+                        <a class="brand-desc__link" href="https://www.famemaster.com/" target="_blank">www.famemaster.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-cobi">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Cobi
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/cobi.svg" alt="cobi">
+                        <a class="brand-desc__link" href="https://cobi.eu/" target="_blank">www.cobi.eu</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-eurographics">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Eurographics
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/eurographics.svg" alt="eurographics">
+                        <a class="brand-desc__link" href="https://www.eurographics.ca/en/home" target="_blank">www.eurographics.ca</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-globber">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Globber
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/globber.svg" alt="globber">
+                        <a class="brand-desc__link" href="https://www.globber.com/ua/" target="_blank">www.globber.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-hama">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Hama
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/hama.svg" alt="hama">
+                        <a class="brand-desc__link" href="https://www.hama.dk/en/" target="_blank">www.hama.dk</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-larsen">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Larsen
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/larsen.svg" alt="larsen">
+                        <a class="brand-desc__link" href="https://www.larsen.no/en" target="_blank">www.larsen.no</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-noxo">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Noxo
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/noxo.svg" alt="noxo">
+                        <a class="brand-desc__link" href="https://www.noxogaming.eu/" target="_blank">www.noxogaming.eu</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-piatnik">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Piatnik
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/piatnik.svg" alt="piatnik">
+                        <a class="brand-desc__link" href="https://www.piatnik.com/en" target="_blank">www.piatnik.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-revell">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Revell
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/revell.svg" alt="revell">
+                        <a class="brand-desc__link" href="https://www.revell.de/" target="_blank">www.revell.de</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-scootandride">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Scoot And Ride
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/toys/colored/scootandride.svg" alt="Scoot And Ride">
+                        <a class="brand-desc__link" href="https://www.scootandride.at/?lang=en" target="_blank">www.scootandride.at</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><div class="modal modal-close" id="modal-triathlon">
+
+    <div class="modal__holder">
+        <button class="modal__close-btn modal-close">
+            <i class="icon icon--close modal__close-btn-icon"></i>
+        </button>
+
+        <div class="modal__main">
+
+            <div class="modal__heading h4">
+                Triathlon
+            </div>
+
+            <div class="modal__body">
+                <div class="brand-desc">
+
+                    <div class="brand-desc__top">
+                        <img class="brand-desc__logo" src="assets/img/vendors/it/colored/Triathlon.svg" alt="Triathlon">
+                        <a class="brand-desc__link" href="https://www.triathlon-batteries.com/" target="_blank">www.triathlon-batteries.com</a>
+                    </div>
+
+                    <div class="brand-desc__text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores facilis harum hic,
+                            magni odio omnis praesentium quia quidem quos reiciendis rerum unde! Error odio optio quam
+                            repudiandae. Architecto, voluptatem.
+                        </p>
+                    </div>
+                </div><!-- brand description -->
+            </div><!-- body -->
+
+            <div class="modal__footer">
+                <div class="modal__controls">
+                    <button type="button" class="btn btn--outline modal-close modal__controls-btn">
+                        <span class="btn__inner">
+                            <span class="btn__text">Закрити</span>
+                        </span>
+                    </button>
+                </div>
+            </div><!-- footer -->
+        </div><!-- main -->
+    </div><!-- modal holder -->
+
+</div><!-- user age modal --><aside class="sidebar">
+
+    <div class="sidebar__body">
+
+        <div class="search sidebar__search">
+            <input class="input-text search__control" type="text" placeholder="Пошук по статтям..." name="search">
+            <button class="search__submit">
+                <i class="icon icon--search"></i>
+            </button>
+        </div><!-- search -->
+
+        <nav class="sidebar__nav">
+            <ul class="sidebar__nav-list">
+                <li class="sidebar__nav-item">
+                    <a href="#" class="sidebar__nav-link">Про компанію</a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#" class="sidebar__nav-link">Новини</a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#" class="sidebar__nav-link">Постачальники</a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#" class="sidebar__nav-link">Контакти</a>
+                </li>
+            </ul>
+        </nav><!-- nav -->
+
+        <ul class="lang-list sidebar__lang-list">
+            <li class="lang-list__item">
+                <span class="lang-list__link lang-list__link--active">Ua</span>
+            </li>
+            <li class="lang-list__item">
+                <a href="#" class="lang-list__link">En</a>
+            </li>
+        </ul><!-- lang -->
+
+        <button class="btn sidebar__partnership-btn" data-modal-id="modal-partnership">
+            <span class="btn__inner">
+                <span class="btn__text">Стати партнером</span>
+            </span>
+        </button>
+
+        <ul class="contacts-list sidebar__contacts-list">
+            <li class="contacts-list__item">
+                <i class="icon icon--phone contacts-list__item-icon"></i>
+                <span class="contacts-list__item-text">
+                    <a href="tel:+380442002818">044 200 28 18</a>
+                    <span class="text--300 text--extrasmall">(багатоканальний)</span>
+                </span>
+            </li>
+            <li class="contacts-list__item">
+                <i class="icon icon--mail contacts-list__item-icon"></i>
+                <span class="contacts-list__item-text">
+                    <a href="mailto:info@diweave.com">info@diweave.com</a>
+                    <span class="text--300 text--extrasmall">- підрозділ IT</span>
+                    <br>
+                    <a href="mailto:info@dw-toys.com.ua">info@dw-toys.com.ua</a>
+                    <span class="text--300 text--extrasmall">- підрозділ дитячих товарів</span>
+                </span>
+            </li>
+            <li class="contacts-list__item">
+                <i class="icon icon--pointer contacts-list__item-icon"></i>
+                <span class="contacts-list__item-text">
+                    Україна, 03170, Київ, б-р Жуля Верна<br>
+                    (Ромен Ролана), 13-в
+                </span>
+            </li>
+        </ul><!-- contacts -->
+
+    </div>
+</aside>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/plugins.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+// list reset
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li{
+    position: static;
+    padding: 0;
+    margin: 0;
+
+    &::before{
+      display: none;
+    }
+  }
+}
+
+// link reset
+%linkreset {
+  text-decoration: none;
+  color: inherit;
+  &:hover,
+  &:focus{
+    text-decoration: none;
+  }
+}
+
+// button reset
+%buttonreset {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+// no wrap
+%nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-overflow{
+  overflow: hidden;
+}
+
+.hidden{
+  display: none;
+}
+
+.text{
+
+  &--right{
+    text-align: right;
+  }
+
+  &--left{
+    text-align: left;
+  }
+
+  &--center{
+    text-align: center;
+  }
+
+  &--weight{
+
+    &--400{
+      font-weight: 400;
+    }
+
+    &--500{
+      font-weight: 500;
+    }
+
+    &--700{
+      font-weight: 700;
+    }
+  }
+
+  &--style{
+
+    &--primary{
+      color: $primary200;
+    }
+
+  }
+}

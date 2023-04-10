@@ -1,0 +1,228 @@
+.btn{
+  @extend %buttonreset;
+  @extend %linkreset;
+  display: inline-flex;
+  vertical-align: middle;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  $this: &;
+
+  &--fluid{
+    display: flex;
+    width: 100%;
+  }
+
+  &__inner{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0 .3rem;
+    background-color: $primary300;
+    border: 1px solid $primary300;
+    border-bottom: none;
+    color: $white;
+    @include animate('color, background-color, border-color');
+
+    @include media(">=xxl"){
+      padding: 1.4rem 0 .5rem;
+    }
+  }
+
+  &__icon{
+    font-size: 1.6rem;
+    margin: 0 .4rem 0 1.6rem;
+
+    @include media(">=xxl"){
+      font-size: 2rem;
+      margin: 0 .8rem 0 2.4rem;
+    }
+
+    &:only-child{
+      margin: 0 1.1rem;
+
+      @include media(">=xxl"){
+        margin: 0 1.3rem;
+      }
+    }
+  }
+
+  &__text{
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    position: relative;
+    bottom: -.07em;
+
+    &:first-child{
+      padding-left: 3.2rem;
+    }
+
+    &:last-child{
+      padding-right: 3.2rem;
+    }
+
+    @include media(">=xxl"){
+      line-height: 2rem;
+      font-size: 1.4rem;
+      bottom: unset;
+    }
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-left: 1px solid $primary300;
+    z-index: 2;
+  }
+
+  &::after{
+    content: "";
+    display: block;
+    height: .8rem;
+    width: 100%;
+    transform-origin: 0 0;
+    transform: skew(-45deg);
+    background-color: $primary300;
+    border: 1px solid $primary300;
+    border-top: none;
+    border-left: none;
+  }
+
+  &--simple::after{
+    transform: none;
+  }
+
+  &--reversed{
+    flex-direction: column-reverse;
+
+    #{$this}__inner{
+      padding:  .5rem 0 1rem;
+      border-bottom: 1px solid $primary300;
+      border-top: none;
+
+      @include media(">=xxl"){
+        padding: .7rem 0 1.2rem;
+      }
+    }
+
+    &::before{
+      left: auto;
+      right: 0;
+    }
+
+    &::after{
+      transform-origin: 0 100%;
+      border: none;
+      border-top: 1px solid $primary300;
+      border-left: 1px solid $primary300;
+    }
+  }
+
+  &--large{
+    #{$this}__inner{
+      padding: 1.6rem 0 .7rem;
+
+      @include media(">=xxl"){
+        padding: 1.8rem 0 .9rem;
+      }
+    }
+
+    #{$this}__icon{
+      font-size: 2rem;
+      margin: 0 .4rem 0 2rem;
+
+      &:only-child{
+        margin: 0 1.5rem;
+
+        @include media(">=xxl"){
+          margin: 0 1.7rem;
+        }
+      }
+
+      @include media(">=xxl"){
+        font-size: 2.4rem;
+        margin: 0 .8rem 0 2.4rem;
+      }
+    }
+
+    #{$this}__text{
+      font-size: 1.4rem;
+      line-height: 2rem;
+
+      @include media(">=xxl"){
+        font-size: 1.6rem;
+        bottom: unset;
+      }
+
+      &:first-child{
+        padding-left: 2.8rem;
+
+        @include media(">=xxl"){
+          padding-left: 3.2rem;
+        }
+      }
+
+      &:last-child{
+        padding-right: 2.8rem;
+
+        @include media(">=xxl"){
+          padding-right: 3.2rem;
+        }
+      }
+    }
+
+    #{$this}::after{
+      content: "";
+      display: block;
+      height: .8rem;
+      width: 100%;
+      border: 1px solid red;
+      border-top: none;
+      border-left: none;
+      transform-origin: 0 0;
+      transform: skew(-45deg);
+    }
+  }
+
+  &--outline{
+    #{$this}__inner{
+      background-color: transparent;
+      color: $primary300;
+      @include animate('color, background-color');
+    }
+
+    &::after{
+      background-color: transparent;
+      @include animate('background-color');
+    }
+  }
+
+  &--text-white{
+    #{$this}__text,
+    #{$this}__icon{
+      color: $white;
+    }
+  }
+
+  &:hover{
+    #{$this}__inner{
+      background-color: $primary200;
+      border-color: $primary200;
+      color: $white;
+    }
+
+    &::before{
+      border-color: $primary200;
+    }
+
+    &::after{
+      border-color: $primary200;
+      background-color: $primary200;
+    }
+  }
+}
