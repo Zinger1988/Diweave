@@ -1,20 +1,20 @@
-.news-card{
+.news-card-hor{
 
-  $this: &;
+  @include media(">=sm"){
+    display: grid;
+    justify-items: start;
+    grid-template-columns: 18rem 1fr;
+    gap: 0 3rem;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+          'img title'
+          'img body'
+          'img date';
+  }
 
-  &__link{
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    @include animate('color');
-
-    &:hover{
-      color: $primary200;
-
-      #{$this}__img-item{
-        transform: scale(1.1);
-      }
-    }
+  @include media(">=xxl"){
+    grid-template-columns: 28rem 1fr;
+    gap: 0 4rem;
   }
 
   &__img{
@@ -24,6 +24,10 @@
     width: 100%;
     margin: 0 0 2.4rem;
     overflow: hidden;
+
+    @include media(">=sm"){
+      grid-area: img;
+    }
 
     @include media(">=xxl"){
       margin: 0 0 3.2rem;
@@ -69,6 +73,11 @@
     font-size: $font-size-mobile-lg;
     line-height: 1.5;
 
+    @include media(">=sm"){
+      margin-top: 0;
+      grid-area: title;
+    }
+
     @include media(">=xxl"){
       font-size: $font-size-desktop-md;
     }
@@ -79,32 +88,24 @@
     font-size: $font-size-mobile-md;
     margin: 0 0 2rem;
 
+    @include media(">=sm"){
+      grid-area: body;
+    }
+
     @include media(">=xxl"){
       font-size: $font-size-desktop-sm;
     }
-  }
 
-  &__header{
-    margin: 0 0 2rem;
-  }
-
-  &--dark{
-
-    #{$this}__title{
-      color: $primary300;
-    }
-
-    #{$this}__img{
-
-      &::before{
-        border-left-color: $dark400;
-        border-top-color: $dark400;
-      }
-
-      &::after{
-        border-right-color: $dark400;
-        border-bottom-color: $dark400;
-      }
+    *:last-child{
+      margin-bottom: 0;
     }
   }
+
+  &__date{
+
+    @include media(">=sm"){
+      grid-area: date;
+    }
+  }
+
 }

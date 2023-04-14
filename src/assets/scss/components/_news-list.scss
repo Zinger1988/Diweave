@@ -1,0 +1,12 @@
+.news-list{
+  max-width: 120rem;
+  margin: 0 auto 10rem;
+
+  &__news-card{
+    margin: 0 0 3.2rem;
+
+    @include media(">=md"){
+      margin: 0 0 4rem;
+    }
+  }
+}
