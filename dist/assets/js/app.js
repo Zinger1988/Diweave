@@ -12,7 +12,7 @@ class Modal {
         Modal.callbacks = {
             onHide: (activeModal) => {
                 const forms = activeModal.querySelectorAll('form');
-                if(forms.length !== 0){
+                if (forms.length !== 0) {
                     forms.forEach(f => SiteJS.formReset(f));
                 }
             },
@@ -21,7 +21,7 @@ class Modal {
 
     static bindButton(buttonEl) {
         buttonEl.addEventListener('click', () => {
-            if(Modal.activeModal){
+            if (Modal.activeModal) {
                 Modal.hide();
             }
             const modalId = buttonEl.getAttribute('data-modal-id');
@@ -30,7 +30,7 @@ class Modal {
         })
     }
 
-    static setHandlers(){
+    static setHandlers() {
         const modalButtons = document.querySelectorAll('[data-modal-id]');
 
         modalButtons.forEach(button => {
@@ -45,7 +45,7 @@ class Modal {
 
         Modal.modalElements.forEach(modal => {
             modal.addEventListener('click', (e) => {
-                if(e.target.classList.contains('modal-close') || e.target.closest('.modal-close:not(.modal)')){
+                if (e.target.classList.contains('modal-close') || e.target.closest('.modal-close:not(.modal)')) {
                     Modal.hide();
                     Modal.hideOverlay();
                 }
@@ -53,16 +53,16 @@ class Modal {
         });
     }
 
-    static showOverlay(){
+    static showOverlay() {
         const overlay = document.querySelector('#modal-overlay');
-        if(overlay) return;
+        if (overlay) return;
 
         document.body.append(Modal.modalOverlay);
         document.body.classList.add('no-overflow');
 
         let alpha = .01;
         const timer = setInterval(() => {
-            if (alpha >= 0.8){
+            if (alpha >= 0.8) {
                 clearInterval(timer);
             } else {
                 Modal.modalOverlay.style.backgroundColor = `rgba(0,0,0, ${alpha += 0.1})`;
@@ -70,15 +70,15 @@ class Modal {
         }, 20);
     }
 
-    static hideOverlay(){
+    static hideOverlay() {
         const overlay = document.querySelector('#modal-overlay');
-        if(!overlay) return;
+        if (!overlay) return;
 
         document.body.classList.remove('no-overflow');
 
         let alpha = 0.56;
         const timer = setInterval(() => {
-            if (alpha <= 0.1){
+            if (alpha <= 0.1) {
                 overlay.remove()
                 clearInterval(timer);
             } else {
@@ -87,13 +87,13 @@ class Modal {
         }, 20);
     }
 
-    static show(modalId){
+    static show(modalId) {
         const targetModal = Modal.modalElements.find(element => element.id === modalId);
         Modal.activeModal = targetModal;
         targetModal.classList.add('visible');
     }
 
-    static hide(){
+    static hide() {
         Modal.callbacks.onHide(Modal.activeModal);
         Modal.activeModal.classList.remove('visible');
         Modal.activeModal = null;
@@ -187,9 +187,41 @@ class Validation {
     }
 }
 
+//#region reCAPTCHA v2
+let partnershipCaptchaId, contactsCaptchaId;
+
+function onloadCallback() {
+    partnershipCaptchaId = grecaptcha.render('example1', {
+        sitekey: '6Lcfcw0pAAAAAGi9QH6eQeyvFG-OoScYwQIKXWzb',
+    });
+    contactsCaptchaId = grecaptcha.render('example2', {
+        sitekey: '6Lcfcw0pAAAAAGi9QH6eQeyvFG-OoScYwQIKXWzb',
+    });
+
+    SiteJS.startValidation({
+        formSelector: '#partnership-form',
+        onSuccess: () => {
+            Modal.hide();
+            Modal.hideOverlay();
+            console.log('partnership form succeeded');
+        },
+        captchaId: partnershipCaptchaId
+    });
+
+    SiteJS.startValidation({
+        formSelector: '#contacts-form',
+        onSuccess: () => {
+            Modal.hide();
+            Modal.hideOverlay();
+            console.log('modal-email form succeeded');
+        },
+        captchaId: contactsCaptchaId
+    });
+};
+//#endregion reCAPTCHA v2
+
 const SiteJS = {
     onload: document.addEventListener('DOMContentLoaded', function () {
-
         SiteJS.init();
     }),
     init: function () {
@@ -197,11 +229,14 @@ const SiteJS = {
 
         const mainSlider = document.querySelector('.main-slider__body');
 
-        if(mainSlider){
+        if (mainSlider) {
             const swiper = new Swiper('.main-slider__body', {
                 allowTouchMove: true,
                 preloadImages: false,
                 lazy: true,
+                autoplay: {
+                    delay: 6000,
+                },
                 navigation: {
                     nextEl: '.main-slider__nav-btn--next',
                     prevEl: '.main-slider__nav-btn--prev'
@@ -214,7 +249,7 @@ const SiteJS = {
 
         const newsSlider = document.querySelector('.news__carousel');
 
-        if(newsSlider){
+        if (newsSlider) {
             const swiperNews = new Swiper('.news__carousel', {
                 allowTouchMove: true,
                 freeMode: true,
@@ -255,7 +290,7 @@ const SiteJS = {
 
         const brandsSlider = document.querySelector('.brands__carousel');
 
-        if(brandsSlider){
+        if (brandsSlider) {
             const swiperBrands = new Swiper('.brands__carousel', {
                 allowTouchMove: true,
                 freeMode: true,
@@ -308,27 +343,24 @@ const SiteJS = {
         this.tabs();
         this.sidebar();
         this.headerSearch();
-        this.startValidation({
-            formSelector: '#partnership-form'
-        });
     },
-    startValidation: function({formSelector, cb = () => {}}){
+    startValidation: function ({ formSelector, onSuccess = () => { }, captchaId }) {
 
         const formCollection = document.querySelectorAll(formSelector);
 
-        if(!formCollection.length) return;
+        if (!formCollection.length) return;
 
         formCollection.forEach(formEl => {
             const submitBtnCollection = formEl.querySelectorAll('[data-validation-btn]');
 
             submitBtnCollection.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    this.appendValidation(formEl, cb);
+                    this.appendValidation(formEl, onSuccess, captchaId);
                 })
             })
         })
     },
-    appendValidation(formElement, cb) {
+    appendValidation(formElement, onSuccess, captchaId) {
 
         const formControls = formElement.querySelectorAll('[data-validation]');
 
@@ -367,10 +399,9 @@ const SiteJS = {
             ],
         }
 
-
         // applying Validation class and binding checks for inputs by data attribute
         formControls.forEach(element => {
-            if(!element.customValidation){
+            if (!element.customValidation) {
                 element.customValidation = new Validation(element);
                 element.customValidation.init()
 
@@ -422,11 +453,14 @@ const SiteJS = {
             });
 
             const invalidElements = Array.from(formControls).some(element => element.customValidation.getStatus() === 'invalid');
+            const captchaResponse = grecaptcha.getResponse(captchaId)
 
-            if (!invalidElements) {
-                cb();
+            if (!invalidElements && captchaResponse) {
+                onSuccess();
+                grecaptcha.reset(captchaId);
             }
-        }, {once: true})
+
+        }, { once: true })
     },
     typeDisplay() {
         if ("ontouchstart" in document.documentElement) {
@@ -438,7 +472,7 @@ const SiteJS = {
     tabs() {
         const wrappers = document.querySelectorAll('.tabs');
 
-        if(wrappers.length === 0){
+        if (wrappers.length === 0) {
             return
         }
 
@@ -449,18 +483,18 @@ const SiteJS = {
             const contentItems = tabsContent.querySelectorAll('.tabs__content-item');
 
             tabsHead.addEventListener('click', (e) => {
-                if(e.target.classList.contains('tabs__head-item')){
+                if (e.target.classList.contains('tabs__head-item')) {
                     const tabsContentId = e.target.dataset['tabTarget'];
                     e.target.classList.add('tabs__head-item--active');
 
                     tabsHeadBtn.forEach(btn => {
-                        if(btn !== e.target){
+                        if (btn !== e.target) {
                             btn.classList.remove('tabs__head-item--active');
                         }
                     })
 
                     contentItems.forEach(item => {
-                        if(item.dataset['tabId'] === tabsContentId){
+                        if (item.dataset['tabId'] === tabsContentId) {
                             item.classList.add('tabs__content-item--active');
                             return
                         }
@@ -483,7 +517,7 @@ const SiteJS = {
         sidebar.addEventListener('click', toggleSidebar);
         sidebarBody.addEventListener('click', (e) => e.stopPropagation());
         header.addEventListener('click', (e) => {
-            if(e.target !== menuBtn && !e.target.closest('.header__menu-btn')){
+            if (e.target !== menuBtn && !e.target.closest('.header__menu-btn')) {
                 sidebar.classList.remove('sidebar--active');
                 menuBtn.querySelector('.burger-icon').classList.remove('burger-icon--active');
             }
@@ -495,7 +529,7 @@ const SiteJS = {
             searchInput.value = '';
         }
     },
-    headerSearch(){
+    headerSearch() {
         const headerSearch = document.querySelector('.header__search');
         const searchInput = headerSearch.querySelector('.search__control');
         const headerNav = document.querySelector('.header__nav');
@@ -506,12 +540,12 @@ const SiteJS = {
         headerSearchCloseBtn.addEventListener('click', closeSearch);
 
         document.addEventListener('click', (e) => {
-            if(
+            if (
                 headerSearch.classList.contains('header__search--active')
                 && e.target !== headerSearch
                 && e.target !== headerSearchOpenBtn
                 && !e.target.closest('.header')
-            ){
+            ) {
                 closeSearch();
             }
         })
@@ -530,11 +564,11 @@ const SiteJS = {
             searchInput.focus();
         }
     },
-    formReset: function(formElement){
+    formReset: function (formElement) {
         formElement.reset();
 
-        for ( const element of formElement){
-            if(element.customValidation) element.customValidation.clearInvalidities(element);
+        for (const element of formElement) {
+            if (element.customValidation) element.customValidation.clearInvalidities(element);
         }
     },
 };

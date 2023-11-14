@@ -1,41 +1,51 @@
-.partnership-form{
+.partnership-form {
 
-  &__input-row{
+  &__input-row {
     margin: 0 0 1.2rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 1.6rem;
     }
   }
 
-  &__footer{
+  &__footer {
     margin-top: 1rem;
     padding: 2rem 0 0 0;
     border-top: 1px dashed rgba($dark100, .5);
 
-    @include media(">=md"){
+    @include media(">=md") {
       display: flex;
       justify-content: center;
       gap: 1.2rem;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       padding: 2.4rem 0 0 0;
       gap: 1.6rem;
     }
   }
 
-  &__footer-btn{
-    display: block;
+  &__captcha {
+    margin: 0 auto 1.2rem;
+    display: flex;
+    justify-content: center;
+
+    @include media(">=md") {
+      display: block;
+    }
+  }
+
+  &__footer-btn {
+    display: inline-flex;
     width: 100%;
     margin: 0 0 1.2rem;
 
-    @include media(">=md"){
+    @include media(">=md") {
       width: auto;
       margin: 0;
     }
 
-    &:last-child{
+    &:last-child {
       margin: 0;
     }
   }

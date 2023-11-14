@@ -7,7 +7,8 @@ html {
   font-size: 62.5%;
 }
 
-html, body{
+html,
+body {
   min-height: 100vh;
 }
 
@@ -18,13 +19,21 @@ body {
   background-color: $white;
   overflow-x: hidden;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: $font-size-desktop-md;
   }
 }
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
+}
+
+/* ReCaptcha */
+@media only screen and (max-width: 500px) {
+  [style*="transition: visibility 0s linear 0s, opacity 0.3s linear 0s; opacity: 1; visibility: visible; z-index: 2000000000;"] {
+    transform: scale(0.75);
+    transform-origin: 0 0;
+  }
 }

@@ -1,68 +1,70 @@
-.page{
+.page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding-top: 6.5rem;
+  overflow-x: hidden;
+  max-width: 100%;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     padding-top: 9.7rem;
   }
 
-  &__content{
+  &__content {
     flex: 1 0 auto;
   }
 }
 
-.content{
+.content {
 
-  &__section{
+  &__section {
     margin: 0 0 5.6rem;
 
-    @include media(">=sm"){
+    @include media(">=sm") {
       margin: 0 0 6rem;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 11.2rem;
     }
   }
 
-  &__page-title{
+  &__page-title {
     margin: 0 0 4rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 7.2rem;
     }
   }
 
-  &__post-content{
+  &__post-content {
     margin: 0 0 7.2rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 11.2rem;
     }
   }
 
-  &__news-grid{
+  &__news-grid {
     margin: 0 0 .8rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 3rem;
     }
   }
 
-  &__pagination{
+  &__pagination {
     margin: 0 0 7.2rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 11.2rem;
     }
   }
 
-  &__suppliers{
+  &__suppliers {
     margin: 0 0 7.2rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 11.2rem;
     }
   }

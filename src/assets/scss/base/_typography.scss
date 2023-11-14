@@ -1,83 +1,100 @@
 // Typography
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6{
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-weight: 300;
   margin: 1.5em 0 1em;
   line-height: 1.2;
 }
 
-h1, .h1{
+h1,
+.h1 {
   font-size: 3.2rem;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: 4.8rem;
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 2.6rem;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: 4rem;
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 2.2rem;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: 3.2rem;
   }
 }
-h4, .h4{
+
+h4,
+.h4 {
   font-size: 2rem;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: 2.8rem;
   }
 }
 
-h5, .h5{
+h5,
+.h5 {
   font-size: 1.8rem;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: 2.4rem;
   }
 }
 
-h6, .h6{
+h6,
+.h6 {
   font-size: 1.6rem;
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     font-size: 2rem;
   }
 }
 
-p, .p{
+p,
+.p {
   margin: 0 0 1em;
 }
 
-ul, .ul,
-ol, .ol{
+ul,
+.ul,
+ol,
+.ol {
   margin: 1.5em 0;
   padding: 0;
   list-style: none;
 
-  li{
+  li {
     margin: 0 0 .75em;
     padding: 0 0 0 2.8rem;
     position: relative;
   }
 }
 
-ul, .ul{
-  > li{
-    &::before{
+ul,
+.ul {
+  >li {
+    &::before {
       content: "";
       position: absolute;
       left: .8rem;
@@ -88,18 +105,19 @@ ul, .ul{
       background-color: $primary300;
     }
 
-    ul > li::before{
+    ul>li::before {
       background-color: transparent;
       box-shadow: inset 0 0 0 .1rem $primary300;
     }
   }
 }
 
-ol, .ol{
+ol,
+.ol {
   counter-reset: numeric-list;
 
-  > li{
-    &::before{
+  >li {
+    &::before {
       content: counter(numeric-list)".";
       position: absolute;
       left: .8rem;
@@ -109,73 +127,75 @@ ol, .ol{
       counter-increment: numeric-list;
     }
 
-    ol > li::before{
+    ol>li::before {
       font-weight: 400;
     }
   }
 }
 
-.text{
+.text {
 
-  &--dark200{
+  &--dark200 {
     color: $dark200;
   }
 
-  &--300{
+  &--300 {
     font-weight: 300;
   }
 
-  &--400{
+  &--400 {
     font-weight: 400;
   }
 
-  &--600{
+  &--600 {
     font-weight: 600;
   }
 
-  &--700{
+  &--700 {
     font-weight: 700;
   }
 
-  &--extrasmall{
+  &--extrasmall {
     font-size: $font-size-mobile-xs;
 
-    @include media('>=xxl'){
+    @include media('>=xxl') {
       font-size: $font-size-desktop-xs;
     }
   }
 
-  &--small{
+  &--small {
     font-size: $font-size-mobile-sm;
 
-    @include media('>=xxl'){
+    @include media('>=xxl') {
       font-size: $font-size-desktop-sm;
     }
   }
 
-  &--medium{
+  &--medium {
     font-size: $font-size-mobile-md;
 
-    @include media('>=xxl'){
+    @include media('>=xxl') {
       font-size: $font-size-desktop-md;
     }
   }
 
-  &--large{
+  &--large {
     font-size: $font-size-mobile-lg;
 
-    @include media('>=xxl'){
+    @include media('>=xxl') {
       font-size: $font-size-desktop-lg;
     }
   }
 }
 
-a, .a{
+a,
+.a {
   color: $primary200;
   text-decoration: underline transparent;
+  cursor: pointer;
   @include animate(text-decoration);
 
-  &:hover{
+  &:hover {
     text-decoration-color: $primary200;
   }
 }

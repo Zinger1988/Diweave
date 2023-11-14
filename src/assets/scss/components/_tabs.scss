@@ -1,15 +1,18 @@
-.tabs{
-  &__head{
+.tabs {
+
+  $this: &;
+
+  &__head {
     display: flex;
-    box-shadow: inset 0 -.1rem 0 0 rgba($dark100,.3);
+    box-shadow: inset 0 -.1rem 0 0 rgba($dark100, .3);
     margin: 0 0 3.2rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 6rem;
     }
   }
 
-  &__head-item{
+  &__head-item {
     text-transform: uppercase;
     font-weight: 700;
     font-size: $font-size-mobile-sm;
@@ -17,25 +20,51 @@
     cursor: pointer;
     @include animate('box-shadow');
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       font-size: $font-size-desktop-sm;
       padding: 1.6rem 2.4rem;
     }
 
-    &--active{
+    &--active {
       box-shadow: inset 0 -.3rem 0 0 $primary300;
     }
 
-    &:hover:not(&--active){
+    &:hover:not(&--active) {
       box-shadow: inset 0 -.3rem 0 0 $light300;
     }
   }
 
-  &__content-item{
+  &__content-item {
     display: none;
 
-    &--active{
+    &--active {
       display: block;
+    }
+  }
+
+  &--sm {
+
+    #{$this}__head {
+      justify-content: center;
+      margin: 0 0 2rem;
+
+      @include media(">=xxl") {
+        margin: 0 0 3rem;
+      }
+    }
+
+    #{$this}__head-item {
+      text-transform: none;
+      font-size: 1.3rem;
+      font-weight: 500;
+
+      &:hover {
+        box-shadow: inset 0 -0.2rem 0 #D2DCE1;
+      }
+
+      &--active {
+        box-shadow: inset 0 -0.2rem 0 $primary300;
+      }
     }
   }
 }

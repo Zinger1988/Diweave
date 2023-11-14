@@ -1,4 +1,8 @@
-.input-text{
+textarea.input-text {
+  min-height: 10rem;
+}
+
+.input-text {
   display: block;
   background-color: $white;
   width: 100%;
@@ -9,20 +13,20 @@
   border: .1rem solid $light400;
   @include animate('border');
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     line-height: 2.4rem;
     padding: 1rem 2rem;
   }
 
-  &:focus{
+  &:focus {
     border: .1rem solid $primary300;
 
-    &::placeholder{
+    &::placeholder {
       opacity: 0;
     }
   }
 
-  &::placeholder{
+  &::placeholder {
     font-family: inherit;
     line-height: 2rem;
     color: $dark100;
@@ -30,18 +34,18 @@
   }
 
   :invalid,
-  &.invalid{
+  &.invalid {
     border-color: #EA5858;
   }
 
   :disabled,
-  &--disabled{
+  &--disabled {
     border-color: $light300;
     background-color: $light200;
   }
 
-  &--required{
-    background:  url("../img/required-dot.svg") no-repeat calc(100% - 1.6rem) 50% / .6rem auto;
+  &--required {
+    background: url("../img/required-dot.svg") no-repeat calc(100% - 1.6rem) 2rem / .6rem auto;
     padding-right: 3rem;
   }
 }

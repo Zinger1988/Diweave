@@ -35,46 +35,103 @@ title: index
 <div class="contacts content__contacts">
     <div class="contacts__info">
         <div class="container contacts__info-container">
-            <div class="row flex-column flex-lg-row justify-content-between justify-content-lg-start flex-grow-1 flex-lg-grow-0 align-items-lg-center">
+            <div
+                class="row flex-column flex-lg-row justify-content-between justify-content-lg-start flex-grow-1 flex-lg-grow-0 align-items-lg-center">
                 <div class="col-lg-5 col-xl-4 col-xxl-6 offset-xl-1 offset-xxl-0">
-                    <ul class="contacts__list">
-                        <li class="contacts__list-item">
-                            <img loading="lazy" src="assets/img/contacts-phone.svg" class="contacts__list-icon" alt="phone image">
-                            <div class="contacts__list-text">
-                                <a href="tel:+380442002818">+38 044 200 28 18</a>
-                                <span class="text--small text--dark200">(багатоканальний)</span>
+
+                    <div class="tabs">
+                        <div class="tabs__head">
+                            <div class="tabs__head-item tabs__head-item--active" data-tab-target="ukraine-contacts">
+                                Офіс в Україні
                             </div>
-                        </li>
-                        <li class="contacts__list-item">
-                            <img loading="lazy" src="assets/img/contacts-email.svg" class="contacts__list-icon" alt="email image">
-                            <div class="contacts__list-text">
-                                <a href="mailto:info@diweave.com">info@diweave.com</a>
-                                <span class="text--small text--300 text--dark200">- підрозділ IT</span>
-                                <br>
-                                <a href="mailto:info@dw-toys.com.ua">info@dw-toys.com.ua</a>
-                                <span class="text--small text--300 text--dark200">- підрозділ дитячих товарів</span>
+                            <div class="tabs__head-item" data-tab-target="сzech-contacts">
+                                Офіс в Чехії
                             </div>
-                        </li>
-                        <li class="contacts__list-item">
-                            <img loading="lazy" src="assets/img/contacts-pointer.svg" class="contacts__list-icon" alt="pointer image">
-                            <div class="contacts__list-text">
-                                Україна, 03170, Київ, б-р Жуля Верна<br>
-                                (Ромен Ролана), 13-в
+                        </div><!-- tabs head -->
+
+                        <div class="tabs__content">
+                            <div class="tabs__content-item tabs__content-item--active" data-tab-id="ukraine-contacts">
+                                <ul class="contacts__list">
+                                    <li class="contacts__list-item">
+                                        <img loading="lazy" src="assets/img/contacts-phone.svg"
+                                            class="contacts__list-icon" alt="phone image">
+                                        <div class="contacts__list-text">
+                                            <a href="tel:+380442002818">+38 044 200 28 18</a>
+                                            <span class="text--small text--dark200">(багатоканальний)</span>
+                                        </div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <img loading="lazy" src="assets/img/contacts-email.svg"
+                                            class="contacts__list-icon" alt="email image">
+                                        <div class="contacts__list-text">
+                                            <span class="a" data-modal-id="modal-email">Написати нам</span>
+                                            <span class="text--small text--300 text--dark200">- підрозділ IT</span>
+                                            <br>
+                                            <span class="a" data-modal-id="modal-email">Написати нам</span>
+                                            <span class="text--small text--300 text--dark200">- підрозділ дитячих
+                                                товарів</span>
+                                        </div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <img loading="lazy" src="assets/img/contacts-pointer.svg"
+                                            class="contacts__list-icon" alt="pointer image">
+                                        <div class="contacts__list-text">
+                                            Україна, 03170, Київ, б-р Жуля Верна<br>
+                                            (Ромен Ролана), 13-в
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                    </ul>
-                    <a href="https://www.facebook.com/Diweave" target="_blank" class="btn contacts__social-btn">
-                        <span class="btn__inner">
-                            <i class="btn__icon icon icon--facebook"></i>
-                            <span class="btn__text">Ми на Facebook</span>
-                        </span>
-                    </a>
+                            <div class="tabs__content-item" data-tab-id="сzech-contacts">
+                                <ul class="contacts__list">
+                                    <li class="contacts__list-item">
+                                        <img loading="lazy" src="assets/img/contacts-phone.svg"
+                                            class="contacts__list-icon" alt="phone image">
+                                        <div class="contacts__list-text">
+                                            <a href="tel:+420281867274">+420 281 867 274</a>
+                                        </div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <img loading="lazy" src="assets/img/contacts-email.svg"
+                                            class="contacts__list-icon" alt="email image">
+                                        <div class="contacts__list-text">
+                                            <span class="a" data-modal-id="modal-email">Написати нам</span>
+                                        </div>
+                                    </li>
+                                    <li class="contacts__list-item">
+                                        <img loading="lazy" src="assets/img/contacts-pointer.svg"
+                                            class="contacts__list-icon" alt="pointer image">
+                                        <div class="contacts__list-text">
+                                            Poděbradská 88/55 198 00 Praha–Hloubětín<br>
+                                            IČ: 24291234 DIČ: CZ24291234
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="https://www.facebook.com/Diweave" target="_blank" class="btn contacts__social-btn">
+                            <span class="btn__inner">
+                                <i class="btn__icon icon icon--facebook"></i>
+                                <span class="btn__text">IT-напрямок</span>
+                            </span>
+                        </a>
+                        <a href="https://www.facebook.com/Diweave" target="_blank" class="btn contacts__social-btn">
+                            <span class="btn__inner">
+                                <i class="btn__icon icon icon--facebook"></i>
+                                <span class="btn__text">Іграшки</span>
+                            </span>
+                        </a>
+
+                    </div>
+
                 </div>
                 <div class="col-lg-7 col-xl-6">
                     <div class="contacts__map">
                         <div class="contacts__map-inner">
                             <img class="contacts__map-img" loading="lazy" src="assets/img/map.svg" alt="Map image">
-                            <a href="https://goo.gl/maps/tcmg7fHX2Xrf3YrYA" target="_blank" class="btn btn--outline contacts__map-btn">
+                            <a href="https://maps.app.goo.gl/enPGXxiFjxzKQC4QA" target="_blank"
+                                class="btn btn--outline contacts__map-btn">
                                 <span class="btn__inner">
                                     <span class="btn__text">Відкрити на мапі</span>
                                 </span>
@@ -94,6 +151,3 @@ title: index
         </div>
     </div>
 </div>
-
-
-

@@ -1,4 +1,4 @@
-.cooperation{
+.cooperation {
   background-color: $dark600;
   background-image: url(../img/white-radial-gradient-3.svg);
   background-position: 0 0;
@@ -8,15 +8,15 @@
   padding: 5.6rem 0;
   position: relative;
 
-  @include media(">=md"){
+  @include media(">=md") {
     padding: 8.8rem 0;
   }
 
-  @include media(">=lg"){
+  @include media(">=lg") {
     padding: 10rem 0;
   }
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     padding: 13.6rem 0;
     background-size: 43.8rem auto;
   }
@@ -35,25 +35,25 @@
     transform: skew(45deg);
     width: 100%;
 
-    @include media(">=sm"){
+    @include media(">=sm") {
       left: calc(100% - 26.8rem);
     }
 
-    @include media(">=md"){
+    @include media(">=md") {
       left: calc(100% - 38rem);
     }
 
-    @include media(">=lg"){
+    @include media(">=lg") {
       left: calc(100% - 50rem);
       height: 1.7rem;
     }
 
-    @include media(">=xl"){
+    @include media(">=xl") {
       left: calc(100% - 63rem);
       height: 2.1rem;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       left: calc(100% - 96rem);
       height: 3.3rem;
     }
@@ -66,31 +66,31 @@
     transform: skew(-45deg);
     width: 100%;
 
-    @include media(">=sm"){
+    @include media(">=sm") {
       right: calc(-100% + 26.8rem);
     }
 
-    @include media(">=md"){
+    @include media(">=md") {
       right: 18rem;
       width: 38rem;
       transform: perspective(1rem) rotateX(3deg);
     }
 
-    @include media(">=lg"){
+    @include media(">=lg") {
       right: 24rem;
       width: 48rem;
       height: 1.3rem;
       transform: perspective(1.3rem) rotateX(3deg);
     }
 
-    @include media(">=xl"){
+    @include media(">=xl") {
       right: 31rem;
       width: 63rem;
       height: 1.6rem;
       transform: perspective(1.6rem) rotateX(3deg);
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       right: 48rem;
       width: 97rem;
       height: 2.5rem;
@@ -98,14 +98,14 @@
     }
   }
 
-  &__l{
+  &__l {
     margin-bottom: 3.6rem;
 
-    @include media(">=md"){
+    @include media(">=md") {
       margin-bottom: 0;
     }
 
-    &::before{
+    &::before {
       content: "";
       position: absolute;
       left: 0;
@@ -118,12 +118,12 @@
       background-image: url(../img/blue-dots.svg);
       opacity: .3;
 
-      @include media(">=md"){
+      @include media(">=md") {
         width: 14rem;
         height: 14rem;
       }
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         width: 18rem;
         height: 18rem;
         top: 50%;
@@ -132,14 +132,14 @@
     }
   }
 
-  &__title{
+  &__title {
     margin-top: 0;
   }
 
-  &__r{
+  &__r {
     position: relative;
 
-    &::before{
+    &::before {
       content: "";
       position: absolute;
       left: 100%;
@@ -152,29 +152,29 @@
       background-image: url(../img/blue-dots.svg);
       opacity: .3;
 
-      @include media(">=sm"){
+      @include media(">=sm") {
         transform: translate(-120%, -60%);
       }
 
-      @include media(">=md"){
+      @include media(">=md") {
         top: 0%;
         width: 14rem;
         height: 14rem;
         transform: translate(-50%, -35%);
       }
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         width: 18rem;
         height: 18rem;
       }
     }
   }
 
-  &__primary-text{
+  &__primary-text {
     font-size: $font-size-mobile-lg;
     font-weight: 500;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       font-size: $font-size-desktop-lg;
     }
   }
