@@ -1,4 +1,4 @@
-.btn{
+.btn {
   @extend %buttonreset;
   @extend %linkreset;
   display: inline-flex;
@@ -9,12 +9,12 @@
 
   $this: &;
 
-  &--fluid{
+  &--fluid {
     display: flex;
     width: 100%;
   }
 
-  &__inner{
+  &__inner {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -26,51 +26,51 @@
     color: $white;
     @include animate('color, background-color, border-color');
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       padding: 1.4rem 0 .5rem;
     }
   }
 
-  &__icon{
+  &__icon {
     font-size: 1.6rem;
     margin: 0 .4rem 0 1.6rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       font-size: 2rem;
       margin: 0 .8rem 0 2.4rem;
     }
 
-    &:only-child{
+    &:only-child {
       margin: 0 1.1rem;
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         margin: 0 1.3rem;
       }
     }
   }
 
-  &__text{
+  &__text {
     font-size: 1.2rem;
     line-height: 1.6rem;
     position: relative;
     bottom: -.07em;
 
-    &:first-child{
+    &:first-child {
       padding-left: 3.2rem;
     }
 
-    &:last-child{
+    &:last-child {
       padding-right: 3.2rem;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       line-height: 2rem;
       font-size: 1.4rem;
       bottom: unset;
     }
   }
 
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     left: 0;
@@ -80,7 +80,7 @@
     z-index: 2;
   }
 
-  &::after{
+  &::after {
     content: "";
     display: block;
     height: .8rem;
@@ -93,29 +93,29 @@
     border-left: none;
   }
 
-  &--simple::after{
+  &--simple::after {
     transform: none;
   }
 
-  &--reversed{
+  &--reversed {
     flex-direction: column-reverse;
 
-    #{$this}__inner{
-      padding:  .5rem 0 1rem;
+    #{$this}__inner {
+      padding: .5rem 0 1rem;
       border-bottom: 1px solid $primary300;
       border-top: none;
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         padding: .7rem 0 1.2rem;
       }
     }
 
-    &::before{
+    &::before {
       left: auto;
       right: 0;
     }
 
-    &::after{
+    &::after {
       transform-origin: 0 100%;
       border: none;
       border-top: 1px solid $primary300;
@@ -123,60 +123,60 @@
     }
   }
 
-  &--large{
-    #{$this}__inner{
+  &--large {
+    #{$this}__inner {
       padding: 1.6rem 0 .7rem;
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         padding: 1.8rem 0 .9rem;
       }
     }
 
-    #{$this}__icon{
+    #{$this}__icon {
       font-size: 2rem;
       margin: 0 .4rem 0 2rem;
 
-      &:only-child{
+      &:only-child {
         margin: 0 1.5rem;
 
-        @include media(">=xxl"){
+        @include media(">=xxl") {
           margin: 0 1.7rem;
         }
       }
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         font-size: 2.4rem;
         margin: 0 .8rem 0 2.4rem;
       }
     }
 
-    #{$this}__text{
+    #{$this}__text {
       font-size: 1.4rem;
       line-height: 2rem;
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         font-size: 1.6rem;
         bottom: unset;
       }
 
-      &:first-child{
+      &:first-child {
         padding-left: 2.8rem;
 
-        @include media(">=xxl"){
+        @include media(">=xxl") {
           padding-left: 3.2rem;
         }
       }
 
-      &:last-child{
+      &:last-child {
         padding-right: 2.8rem;
 
-        @include media(">=xxl"){
+        @include media(">=xxl") {
           padding-right: 3.2rem;
         }
       }
     }
 
-    #{$this}::after{
+    #{$this}::after {
       content: "";
       display: block;
       height: .8rem;
@@ -189,40 +189,50 @@
     }
   }
 
-  &--outline{
-    #{$this}__inner{
+  &--outline {
+    #{$this}__inner {
       background-color: transparent;
       color: $primary300;
       @include animate('color, background-color');
     }
 
-    &::after{
+    &::after {
       background-color: transparent;
       @include animate('background-color');
     }
   }
 
-  &--text-white{
+  &--text-white {
+
     #{$this}__text,
-    #{$this}__icon{
+    #{$this}__icon {
       color: $white;
     }
   }
 
-  &:hover{
-    #{$this}__inner{
+  &:hover {
+    #{$this}__inner {
       background-color: $primary200;
       border-color: $primary200;
       color: $white;
     }
 
-    &::before{
+    &::before {
       border-color: $primary200;
     }
 
-    &::after{
+    &::after {
       border-color: $primary200;
       background-color: $primary200;
+    }
+  }
+
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+
+    #{$this}__inner {
+      background-color: $dark200;
     }
   }
 }

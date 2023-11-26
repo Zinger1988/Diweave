@@ -188,36 +188,37 @@ class Validation {
 }
 
 //#region reCAPTCHA v2
-let partnershipCaptchaId, contactsCaptchaId;
+let capthas = [];
 
 function onloadCallback() {
-    partnershipCaptchaId = grecaptcha.render('example1', {
-        sitekey: '6Lcfcw0pAAAAAGi9QH6eQeyvFG-OoScYwQIKXWzb',
-    });
-    contactsCaptchaId = grecaptcha.render('example2', {
-        sitekey: '6Lcfcw0pAAAAAGi9QH6eQeyvFG-OoScYwQIKXWzb',
-    });
+    const sitekey = '6Lcfcw0pAAAAAGi9QH6eQeyvFG-OoScYwQIKXWzb';
+    const capthaElements = document.querySelectorAll('.partnership-form__captcha');
 
-    SiteJS.startValidation({
-        formSelector: '#partnership-form',
-        onSuccess: () => {
-            Modal.hide();
-            Modal.hideOverlay();
-            console.log('partnership form succeeded');
-        },
-        captchaId: partnershipCaptchaId
-    });
+    capthaElements.forEach(el => {
+        const id = grecaptcha.render(el.id, {
+            sitekey,
+            callback: function (token) {
+                if (token) {
+                    el?.customValidation?.clearInvalidities();
+                }
+            }
+        });
 
-    SiteJS.startValidation({
-        formSelector: '#contacts-form',
-        onSuccess: () => {
-            Modal.hide();
-            Modal.hideOverlay();
-            console.log('modal-email form succeeded');
-        },
-        captchaId: contactsCaptchaId
+        const formSelector = `#${el.closest('.partnership-form').id}`;
+
+        SiteJS.startValidation({
+            formSelector,
+            onSuccess: () => {
+                Modal.hide();
+                Modal.hideOverlay();
+                console.log('partnership form succeeded');
+            },
+            captchaId: id
+        });
+
+        capthas.push({ id, el });
     });
-};
+}
 //#endregion reCAPTCHA v2
 
 const SiteJS = {
@@ -343,6 +344,26 @@ const SiteJS = {
         this.tabs();
         this.sidebar();
         this.headerSearch();
+
+        if (typeof grecaptcha === 'undefined') {
+            this.startValidation({
+                formSelector: '#partnership-form',
+                onSuccess: () => {
+                    Modal.hide();
+                    Modal.hideOverlay();
+                    console.log('partnership form succeeded');
+                }
+            });
+
+            this.startValidation({
+                formSelector: '#contacts-form',
+                onSuccess: () => {
+                    Modal.hide();
+                    Modal.hideOverlay();
+                    console.log('modal-email form succeeded');
+                }
+            });
+        }
     },
     startValidation: function ({ formSelector, onSuccess = () => { }, captchaId }) {
 
@@ -360,7 +381,7 @@ const SiteJS = {
             })
         })
     },
-    appendValidation(formElement, onSuccess, captchaId) {
+    appendValidation(formElement, onSuccess, captchaId = null) {
 
         const formControls = formElement.querySelectorAll('[data-validation]');
 
@@ -397,6 +418,18 @@ const SiteJS = {
                     invalidityMessage: 'Неприпустимі символи. Тільки цифри, знак плюс "+" и круглі дужки "()"'
                 }
             ],
+            captcha: [
+                {
+                    isInvalid() {
+                        if (typeof grecaptcha !== 'undefined') {
+                            return !grecaptcha?.getResponse(captchaId);
+                        }
+
+                        return true;
+                    },
+                    invalidityMessage: 'Необхідно підтвердити, що ви - людина'
+                }
+            ],
         }
 
         // applying Validation class and binding checks for inputs by data attribute
@@ -407,38 +440,20 @@ const SiteJS = {
 
                 const validationPattern = element.getAttribute('data-validation');
 
-                element.customValidation.addValidityChecks(validityChecks.empty);
-
                 switch (validationPattern) {
-                    case 'name':
-                        element.customValidation.addValidityChecks(validityChecks.name);
-                        break;
-                    case 'zip':
-                        element.customValidation.addValidityChecks(validityChecks.zip);
+                    case 'empty':
+                        element.customValidation.addValidityChecks(validityChecks.empty);
                         break;
                     case 'tel':
                         element.customValidation.addValidityChecks(validityChecks.tel);
-                        break;
-                    case 'cc-number':
-                        element.customValidation.addValidityChecks(validityChecks.ccNumber);
-                        break;
-                    case 'cc-exp':
-                        element.customValidation.addValidityChecks(validityChecks.ccExp);
-                        break;
-                    case 'age':
-                        element.customValidation.addValidityChecks(validityChecks.age);
-                        break;
-                    case 'date':
-                        element.customValidation.addValidityChecks(validityChecks.date);
+                        element.customValidation.addValidityChecks(validityChecks.empty);
                         break;
                     case 'email':
                         element.customValidation.addValidityChecks(validityChecks.email);
+                        element.customValidation.addValidityChecks(validityChecks.empty);
                         break;
-                    case 'password':
-                        element.customValidation.addValidityChecks(validityChecks.password);
-                        break;
-                    case 'password-repeat':
-                        element.customValidation.addValidityChecks(validityChecks.passwordRepeat);
+                    case 'captcha':
+                        element.customValidation.addValidityChecks(validityChecks.captcha);
                         break;
                 }
             }
@@ -453,13 +468,10 @@ const SiteJS = {
             });
 
             const invalidElements = Array.from(formControls).some(element => element.customValidation.getStatus() === 'invalid');
-            const captchaResponse = grecaptcha.getResponse(captchaId)
 
-            if (!invalidElements && captchaResponse) {
+            if (!invalidElements) {
                 onSuccess();
-                grecaptcha.reset(captchaId);
             }
-
         }, { once: true })
     },
     typeDisplay() {
@@ -566,6 +578,13 @@ const SiteJS = {
     },
     formReset: function (formElement) {
         formElement.reset();
+
+        if (typeof grecaptcha !== 'undefined') {
+            capthas.forEach(captha => {
+                grecaptcha.reset(captha.id);
+                captha.el?.customValidation?.clearInvalidities()
+            });
+        }
 
         for (const element of formElement) {
             if (element.customValidation) element.customValidation.clearInvalidities(element);

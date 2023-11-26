@@ -18,7 +18,7 @@
                             <div class="input-row partnership-form__input-row">
                                 <span class="input-row__title">ПІБ</span>
                                 <input class="input-text input-text--required input-row__input-text" type="text"
-                                    name="fullname" data-validation>
+                                    name="fullname" data-validation="empty">
                             </div><!-- input row -->
                         </div>
                         <div class="col-md-6">
@@ -54,7 +54,10 @@
                             </div><!-- input row -->
                         </div>
                         <div class="col-12">
-                            <div id="example1" class="partnership-form__captcha"></div>
+                            <div class="input-row partnership-form__input-row">
+                                <div id="partnership-capthca" class="partnership-form__captcha"
+                                    data-validation="captcha"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="partnership-form__footer">
