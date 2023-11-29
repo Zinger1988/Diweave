@@ -232,7 +232,17 @@
     cursor: not-allowed;
 
     #{$this}__inner {
-      background-color: $dark200;
+      background-color: $light300;
+      border: 1px solid $light300;
+    }
+
+    &::before {
+      border-left: 1px solid $light300;
+    }
+
+    &::after {
+      background-color: $light300;
+      border: 1px solid $light300;
     }
   }
 }

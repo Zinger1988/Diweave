@@ -106,6 +106,9 @@ class Validation {
         this.validityChecks = [];
         this.invalidities = [];
         this.invaliditiesElements = [];
+        this.touched = false;
+        this.required = false;
+        this.onValidationEnd = () => { };
     }
 
     init() {
@@ -113,17 +116,16 @@ class Validation {
     }
 
     setHandler(element, text) {
-        if (element.tagName.toLowerCase() !== 'select') {
-            element.addEventListener('keyup', (e) => {
-                e.preventDefault();
-                this.checkValidity(element)
-            })
-        } else {
-            element.addEventListener('change', (e) => {
-                e.preventDefault();
-                this.checkValidity(element)
-            })
+        const handler = (e) => {
+            e.preventDefault();
+            this.touched = true;
+            this.checkValidity(element);
         }
+
+        if (element.tagName.toLowerCase() !== 'select') {
+            element.addEventListener('input', handler);
+        }
+        element.addEventListener('blur', handler);
     }
 
     checkValidity(element) {
@@ -142,6 +144,7 @@ class Validation {
 
                 this.createInvalidityElements(this.invalidities);
                 this.showInvalidityElements(this.invaliditiesElements);
+                this.onValidationEnd();
 
                 return false
 
@@ -150,6 +153,8 @@ class Validation {
                 this.element.classList.remove('invalid');
             }
         }
+
+        this.onValidationEnd();
     }
 
     createInvalidityElements(invalidities) {
@@ -195,19 +200,32 @@ function onloadCallback() {
     const capthaElements = document.querySelectorAll('.partnership-form__captcha');
 
     capthaElements.forEach(el => {
+        const formEl = el.closest('.partnership-form');
+        const formId = `#${formEl.id}`;
+
         const id = grecaptcha.render(el.id, {
             sitekey,
             callback: function (token) {
+                el.customValidation.touched = true;
                 if (token) {
                     el?.customValidation?.clearInvalidities();
                 }
+
+                el.customValidation.checkValidity();
+                SiteJS.checkFormControls({
+                    formControls: formEl.querySelectorAll('[data-validation]'),
+                    submitBtn: formEl.querySelector('[data-validation-btn]')
+                })
+            },
+            'expired-callback': function () {
+                el.customValidation.checkValidity();
+                formEl.querySelector('[data-validation-btn]').disabled = true;
             }
         });
 
-        const formSelector = `#${el.closest('.partnership-form').id}`;
 
         SiteJS.startValidation({
-            formSelector,
+            formSelector: formId,
             onSuccess: () => {
                 Modal.hide();
                 Modal.hideOverlay();
@@ -341,7 +359,14 @@ const SiteJS = {
         }
 
         this.typeDisplay();
-        this.tabs();
+        this.tabs((contentId) => {
+            const tabsMap = {
+                'ukraine-contacts': 'map-ua',
+                'сzech-contacts': 'map-cz'
+            }
+
+            this.mapChange(tabsMap[contentId]);
+        });
         this.sidebar();
         this.headerSearch();
 
@@ -371,20 +396,6 @@ const SiteJS = {
 
         if (!formCollection.length) return;
 
-        formCollection.forEach(formEl => {
-            const submitBtnCollection = formEl.querySelectorAll('[data-validation-btn]');
-
-            submitBtnCollection.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    this.appendValidation(formEl, onSuccess, captchaId);
-                })
-            })
-        })
-    },
-    appendValidation(formElement, onSuccess, captchaId = null) {
-
-        const formControls = formElement.querySelectorAll('[data-validation]');
-
         // Validity checks
         const validityChecks = {
             empty: [
@@ -395,7 +406,7 @@ const SiteJS = {
                         } else {
                             this.invalidityMessage = 'Це поле необхідно заповнити';
                         }
-                        return !elem.value;
+                        return !elem.value.trim();
                     },
                     invalidityMessage: '',
                 }
@@ -403,10 +414,19 @@ const SiteJS = {
             email: [
                 {
                     isInvalid(elem) {
-                        let illegalCharacters = elem.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g);
+                        let illegalCharacters = elem.value.match(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/);
                         return elem.value && !illegalCharacters;
                     },
                     invalidityMessage: 'Ввеідть коректний e-mail'
+                }
+            ],
+            web: [
+                {
+                    isInvalid(elem) {
+                        let illegalCharacters = elem.value.trim().match(/^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/);
+                        return elem.value.trim() ? !illegalCharacters : false;
+                    },
+                    invalidityMessage: 'Ввеідть коректну адресу. Адреса сайта не має включати в себе протокол (http, https etc.)'
                 }
             ],
             tel: [
@@ -432,47 +452,88 @@ const SiteJS = {
             ],
         }
 
-        // applying Validation class and binding checks for inputs by data attribute
-        formControls.forEach(element => {
-            if (!element.customValidation) {
-                element.customValidation = new Validation(element);
-                element.customValidation.init()
+        formCollection.forEach(formEl => {
+            const submitBtn = formEl.querySelector('[data-validation-btn]');
+            submitBtn.disabled = true;
 
-                const validationPattern = element.getAttribute('data-validation');
+            const formControls = formEl.querySelectorAll('[data-validation]');
 
-                switch (validationPattern) {
-                    case 'empty':
-                        element.customValidation.addValidityChecks(validityChecks.empty);
-                        break;
-                    case 'tel':
-                        element.customValidation.addValidityChecks(validityChecks.tel);
-                        element.customValidation.addValidityChecks(validityChecks.empty);
-                        break;
-                    case 'email':
-                        element.customValidation.addValidityChecks(validityChecks.email);
-                        element.customValidation.addValidityChecks(validityChecks.empty);
-                        break;
-                    case 'captcha':
-                        element.customValidation.addValidityChecks(validityChecks.captcha);
-                        break;
-                }
-            }
-        });
-
-        // Checking inputs when form going to be submitted
-        formElement.addEventListener('submit', (e) => {
-            e.preventDefault();
-
+            // applying Validation class and binding checks for inputs by data attribute
             formControls.forEach(element => {
-                element.customValidation.checkValidity()
+                if (!element.customValidation) {
+                    element.customValidation = new Validation(element);
+                    element.customValidation.init()
+
+                    const validationPattern = element.getAttribute('data-validation');
+
+                    switch (validationPattern) {
+                        case 'empty':
+                            element.customValidation.addValidityChecks(validityChecks.empty);
+                            element.customValidation.required = true;
+                            break;
+                        case 'tel':
+                            element.customValidation.addValidityChecks(validityChecks.tel);
+                            element.customValidation.addValidityChecks(validityChecks.empty);
+                            element.customValidation.required = true;
+                            break;
+                        case 'email':
+                            element.customValidation.addValidityChecks(validityChecks.email);
+                            element.customValidation.addValidityChecks(validityChecks.empty);
+                            element.customValidation.required = true;
+                            break;
+                        case 'web':
+                            element.customValidation.addValidityChecks(validityChecks.web);
+                            break;
+                        case 'captcha':
+                            element.customValidation.addValidityChecks(validityChecks.captcha);
+                            element.customValidation.required = true;
+                            break;
+                    }
+
+                    element.customValidation.onValidationEnd = () => {
+                        SiteJS.checkFormControls({ formControls, submitBtn });
+                    }
+                }
             });
 
-            const invalidElements = Array.from(formControls).some(element => element.customValidation.getStatus() === 'invalid');
+            // Checking inputs when form going to be submitted
+            formEl.addEventListener('submit', (e) => {
+                e.preventDefault();
 
-            if (!invalidElements) {
-                onSuccess();
-            }
-        }, { once: true })
+                formControls.forEach(element => {
+                    element.customValidation.checkValidity();
+                });
+
+                const requredElements = Array.from(formControls).filter(element => element.customValidation.required);
+                const invalidElements = requredElements.find(element => element.customValidation.getStatus() === 'invalid');
+
+                if (!invalidElements) {
+                    onSuccess();
+                }
+            });
+
+            // submitBtnCollection.forEach(btn => {
+            //     btn.addEventListener('click', () => {
+            //         this.appendValidation(formEl, onSuccess, captchaId);
+            //     })
+            // })
+        })
+    },
+    checkFormControls: function ({ formControls, submitBtn }) {
+        const requredElements = Array.from(formControls).filter(element => element.customValidation.required);
+        const invalidElements = requredElements.find(element => element.customValidation.getStatus() === 'invalid');
+        const untouchedElements = requredElements.find(element => element.customValidation.touched === false);
+
+        const nonRequredElements = Array.from(formControls).filter(element => !element.customValidation.required);
+        const invalidNonRquiredElements = nonRequredElements.find(element => element.customValidation.getStatus() === 'invalid');
+
+        console.log(invalidElements, untouchedElements);
+
+        if (!invalidElements && !untouchedElements && !invalidNonRquiredElements) {
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.disabled = true;
+        }
     },
     typeDisplay() {
         if ("ontouchstart" in document.documentElement) {
@@ -481,7 +542,15 @@ const SiteJS = {
             document.body.classList.add('hover-device');
         }
     },
-    tabs() {
+    mapChange(mapId) {
+        console.log(mapId);
+        document.querySelectorAll('.contact-map')
+            .forEach(map => {
+                console.log(map.id, mapId)
+                map.style.display = map.id === mapId ? 'block' : 'none';
+            })
+    },
+    tabs(onTabChange = (contentId) => { }) {
         const wrappers = document.querySelectorAll('.tabs');
 
         if (wrappers.length === 0) {
@@ -513,6 +582,8 @@ const SiteJS = {
 
                         item.classList.remove('tabs__content-item--active');
                     })
+
+                    onTabChange(tabsContentId);
                 }
             })
         });
@@ -578,16 +649,21 @@ const SiteJS = {
     },
     formReset: function (formElement) {
         formElement.reset();
+        const formControls = formElement.querySelectorAll('[data-validation]');
+
+        formControls.forEach(control => {
+            if (control.customValidation) {
+                control.customValidation.clearInvalidities();
+                control.customValidation.touched = false;
+            };
+        })
 
         if (typeof grecaptcha !== 'undefined') {
             capthas.forEach(captha => {
                 grecaptcha.reset(captha.id);
-                captha.el?.customValidation?.clearInvalidities()
             });
         }
 
-        for (const element of formElement) {
-            if (element.customValidation) element.customValidation.clearInvalidities(element);
-        }
+        formElement.querySelectorAll('[data-validation-btn]').forEach(btn => btn.disabled = true);
     },
 };
