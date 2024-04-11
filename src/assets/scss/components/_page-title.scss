@@ -1,4 +1,4 @@
-.page-title{
+.page-title {
   background-color: $dark600;
   color: $white;
   padding: 2.8rem 0 3.6rem;
@@ -7,70 +7,46 @@
 
   $this: &;
 
-  @include media(">=md"){
+  @include media(">=md") {
     padding: 2.8rem 0 5.2rem;
   }
 
-  @include media(">=xxl"){
+  @include media(">=xxl") {
     padding: 6rem 0 7.2rem;
   }
 
-  &__date{
+  &__date {
     margin: 0 0 1.2rem;
   }
 
-  &__title{
+  &__title {
     margin: 0 0 1.2rem;
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       margin: 0 0 1.6rem;
     }
   }
 
-  &__img{
+  &__img {
     display: block;
     margin: 0 -1.5rem;
 
-    @include media(">=md"){
+    @include media(">=md") {
       margin: 0;
     }
   }
 
-  &__img-item{
+  &__img-item {
     display: block;
     width: 100%;
-    height: 55vw;
     object-fit: cover;
-
-    @include media(">=sm"){
-      height: 55vw;
-    }
-
-    @include media(">=md"){
-      height: 33vw;
-    }
-
-    @include media(">=lg"){
-      height: 29vw;
-    }
-
-    @include media(">=xl"){
-      height: 23vw;
-    }
-
-    @include media(">=xl"){
-      height: 25vw;
-    }
-
-    @include media(">=1900px"){
-      height: 40rem;
-    }
+    aspect-ratio: 743/472;
   }
 
-  &__bg{
+  &__bg {
     display: none;
 
-    @include media(">=md"){
+    @include media(">=md") {
       display: block;
       position: absolute;
       left: 0;
@@ -78,27 +54,28 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      background: url("../img/gradient-dots.svg") repeat-y right top / 52rem auto;
+      background: url("../img/gradient-dots.svg") repeat-y right top / 52rem
+        auto;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       background-size: 87rem auto;
     }
   }
 
-  &__bg-img{
+  &__bg-img {
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    opacity: .2;
+    opacity: 0.2;
     filter: blur(1rem);
     object-fit: cover;
   }
 
   &::before,
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -107,89 +84,89 @@
     z-index: 10;
   }
 
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     left: 50%;
     height: 1.6rem;
     transform: skew(-45deg);
 
-    @include media(">=sm"){
-      left: calc(100% - 18rem)
+    @include media(">=sm") {
+      left: calc(100% - 18rem);
     }
 
-    @include media(">=md"){
+    @include media(">=md") {
       height: 2.1rem;
-      left: calc(100% - 26rem)
+      left: calc(100% - 26rem);
     }
 
-    @include media(">=lg"){
+    @include media(">=lg") {
       height: 2.8rem;
-      left: calc(100% - 34rem)
+      left: calc(100% - 34rem);
     }
 
-    @include media(">=xl"){
+    @include media(">=xl") {
       height: 3.5rem;
-      left: calc(100% - 43rem)
+      left: calc(100% - 43rem);
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       height: 5rem;
-      left: calc(100% - 66rem)
+      left: calc(100% - 66rem);
     }
   }
 
-  &::before{
+  &::before {
     display: none;
     height: 1rem;
     transform: skew(45deg);
 
-    @include media(">=sm"){
+    @include media(">=sm") {
       display: block;
       right: calc(100% - 5rem);
     }
 
-    @include media(">=md"){
+    @include media(">=md") {
       height: 1.3rem;
-      right: calc(100% - 7rem)
+      right: calc(100% - 7rem);
     }
 
-    @include media(">=lg"){
+    @include media(">=lg") {
       height: 1.8rem;
-      right: calc(100% - 8rem)
+      right: calc(100% - 8rem);
     }
 
-    @include media(">=xl"){
+    @include media(">=xl") {
       height: 2.2rem;
-      right: calc(100% - 10rem)
+      right: calc(100% - 10rem);
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       height: 3.5rem;
-      right: calc(100% - 16rem)
+      right: calc(100% - 16rem);
     }
   }
 
-  &--post{
+  &--post {
     padding: 2.8rem 0 0;
 
-    #{$this}__crumbs{
+    #{$this}__crumbs {
       margin: 0 0 2.8rem;
 
-      @include media(">=xxl"){
+      @include media(">=xxl") {
         margin: 0 0 4rem;
       }
     }
 
     &::before,
-    &::after{
+    &::after {
       display: none;
 
-      @include media(">=sm"){
+      @include media(">=sm") {
         display: none;
       }
 
-      @include media(">=md"){
+      @include media(">=md") {
         display: block;
       }
     }

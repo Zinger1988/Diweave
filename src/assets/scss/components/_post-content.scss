@@ -1,34 +1,29 @@
-.post-content{
-
-  &__inner{
-    >*:first-child{
+.post-content {
+  &__inner {
+    > *:first-child {
       margin-top: 0;
     }
   }
 
-  &__img{
+  &__img,
+  &__video,
+  &__table {
     margin: 3.2rem 0;
 
-    @include media(">=lg"){
+    @include media(">=lg") {
       width: 89%;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       width: 100%;
       margin: 4.8rem 0;
     }
   }
-  
-  &__img-holder{
-    position: relative;
-    margin: 0 0 1.2rem;
 
-    @include media(">=xxl"){
-      margin: 0 0 1.6rem;
-    }
-
+  &__img-holder,
+  &__video {
     &::before,
-    &::after{
+    &::after {
       content: "";
       position: absolute;
       left: 0;
@@ -37,33 +32,43 @@
       z-index: 2;
     }
 
-    &::before{
+    &::before {
       top: 0;
-      background: url("../img/post-img-border-top.svg") no-repeat top left / 100% auto;
+      background: url("../img/post-img-border-top.svg") no-repeat top left /
+        100% auto;
     }
 
-    &::after{
+    &::after {
       bottom: 0;
-      background: url("../img/post-img-border-bottom.svg") no-repeat bottom left / 100% auto;
+      background: url("../img/post-img-border-bottom.svg") no-repeat bottom left /
+        100% auto;
     }
   }
 
-  &__img-item{
+  &__img-holder {
+    position: relative;
+    margin: 0 0 1.2rem;
+
+    @include media(">=xxl") {
+      margin: 0 0 1.6rem;
+    }
+  }
+
+  &__img-item {
     display: block;
     width: 100%;
   }
 
-  &__img-caption{
+  &__img-caption {
     color: $dark100;
     font-size: $font-size-mobile-xs;
 
-    @include media(">=md"){
+    @include media(">=md") {
       font-size: $font-size-mobile-sm;
     }
 
-    @include media(">=xxl"){
+    @include media(">=xxl") {
       font-size: $font-size-desktop-sm;
     }
   }
-
 }

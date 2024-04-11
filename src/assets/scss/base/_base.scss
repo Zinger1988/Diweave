@@ -32,7 +32,7 @@ body {
 
 /* ReCaptcha */
 @media only screen and (max-width: 500px) {
-  [style*="transition: visibility 0s linear 0s, opacity 0.3s linear 0s; opacity: 1; visibility: visible; z-index: 2000000000;"] {
+  [style*="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: fixed; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255);"] {
     transform: scale(0.75);
     transform-origin: 0 0;
   }

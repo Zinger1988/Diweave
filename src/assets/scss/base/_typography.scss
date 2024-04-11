@@ -85,7 +85,7 @@ ol,
   list-style: none;
 
   li {
-    margin: 0 0 .75em;
+    margin: 0 0 0.75em;
     padding: 0 0 0 2.8rem;
     position: relative;
   }
@@ -93,21 +93,21 @@ ol,
 
 ul,
 .ul {
-  >li {
+  > li {
     &::before {
       content: "";
       position: absolute;
-      left: .8rem;
+      left: 0.8rem;
       top: calc((#{$line-height} / 2) * 1rem);
       transform: translateY(-50%);
-      width: .6rem;
-      height: .6rem;
+      width: 0.6rem;
+      height: 0.6rem;
       background-color: $primary300;
     }
 
-    ul>li::before {
+    ul > li::before {
       background-color: transparent;
-      box-shadow: inset 0 0 0 .1rem $primary300;
+      box-shadow: inset 0 0 0 0.1rem $primary300;
     }
   }
 }
@@ -116,25 +116,24 @@ ol,
 .ol {
   counter-reset: numeric-list;
 
-  >li {
+  > li {
     &::before {
-      content: counter(numeric-list)".";
+      content: counter(numeric-list) ".";
       position: absolute;
-      left: .8rem;
+      left: 0.8rem;
       top: 0;
       color: $primary300;
       font-weight: 700;
       counter-increment: numeric-list;
     }
 
-    ol>li::before {
+    ol > li::before {
       font-weight: 400;
     }
   }
 }
 
 .text {
-
   &--dark200 {
     color: $dark200;
   }
@@ -158,7 +157,7 @@ ol,
   &--extrasmall {
     font-size: $font-size-mobile-xs;
 
-    @include media('>=xxl') {
+    @include media(">=xxl") {
       font-size: $font-size-desktop-xs;
     }
   }
@@ -166,7 +165,7 @@ ol,
   &--small {
     font-size: $font-size-mobile-sm;
 
-    @include media('>=xxl') {
+    @include media(">=xxl") {
       font-size: $font-size-desktop-sm;
     }
   }
@@ -174,7 +173,7 @@ ol,
   &--medium {
     font-size: $font-size-mobile-md;
 
-    @include media('>=xxl') {
+    @include media(">=xxl") {
       font-size: $font-size-desktop-md;
     }
   }
@@ -182,7 +181,7 @@ ol,
   &--large {
     font-size: $font-size-mobile-lg;
 
-    @include media('>=xxl') {
+    @include media(">=xxl") {
       font-size: $font-size-desktop-lg;
     }
   }
@@ -197,5 +196,37 @@ a,
 
   &:hover {
     text-decoration-color: $primary200;
+  }
+}
+
+.table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+
+  &__row {
+    display: table-row;
+
+    &:nth-child(even) {
+      background-color: $light200;
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 1rem;
+
+    @include media(">=md") {
+      font-size: inherit;
+      padding: 1.2rem 1.5rem;
+    }
+
+    &--head {
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid $primary400;
+    }
   }
 }
